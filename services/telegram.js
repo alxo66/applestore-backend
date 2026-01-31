@@ -1,17 +1,9 @@
-import fetch from 'node-fetch';
+import axios from "axios";
 
-const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
-
-export async function sendTelegram(text) {
-  const url = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
-
-  await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      chat_id: CHAT_ID,
-      text
-    })
+export async function notify(text) {
+  const url = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`;
+  await axios.post(url, {
+    chat_id: process.env.TELEGRAM_CHAT_ID,
+    text
   });
 }

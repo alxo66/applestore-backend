@@ -88,6 +88,22 @@ app.get("/api/deposit", async (req, res) => {
     res.status(500).json({ error: "Deposit error" });
   }
 });
+app.get("/api/deposits", (req, res) => {
+  res.json([
+    {
+      date: Date.now() - 86400000,
+      currency: "BTC",
+      amount: 0.002,
+      status: "done"
+    },
+    {
+      date: Date.now() - 3600000,
+      currency: "USDT",
+      amount: 100,
+      status: "pending"
+    }
+  ]);
+});
 
 app.listen(PORT, () => {
   console.log("Server running on port", PORT);

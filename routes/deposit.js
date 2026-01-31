@@ -3,6 +3,7 @@ import { getRates } from "../services/rates.js";
 import { generateQR } from "../services/qr.js";
 
 const router = express.Router();
+const API_URL = "https://applestore-backend-production.up.railway.app";
 
 router.get("/", async (req, res) => {
   const wallets = {

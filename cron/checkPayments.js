@@ -1,9 +1,15 @@
 const cron = require('node-cron')
-const checkPayment = require('../services/blockchain')
-const sendTelegram = require('../services/telegram')
+const { checkBTC } = require('../services/blockchain')
+const { notifyAdmin } = require('../services/telegram')
 
 cron.schedule('*/1 * * * *', async () => {
-  console.log('Checking payments...')
+  console.log('🔍 Checking BTC payments...')
 
-  // тут будет проверка платежей и уведомления
+  const paidOrders = await checkBTC()
+
+  for (const order of paidOrders) {
+    await notifyAdmin(
+      `💰 Оплата получена!\nЗаказ: ${order.id}\nСумма: ${order.amount} BTC`
+    )
+  }
 })

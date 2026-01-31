@@ -1,22 +1,29 @@
-const express = require('express')
-const QRCode = require('qrcode')
+import express from "express";
+import { getRates } from "../services/rates.js";
+import { generateQR } from "../services/qr.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   const wallets = {
-    BTC: 'bc1qlgf034j5nhqh0ltsqnhrepchlxwlykrtujvupq',
-    ETH: '0x5Fc25f19E18Dfc7d19595cB7d1eB0D0605b9A3FA',
-    USDT: 'TMM1xGXxAY9R66hGPxKNfxo81KrmdyrszE',
-    TON: 'UQD-XSYf6P-NyjbSJYDHsgHnk0e5CiJQ2-NCZddro_5-c8B4'
+    BTC: process.env.BTC_ADDRESS,
+    ETH: process.env.ETH_ADDRESS,
+    USDT: process.env.USDT_ADDRESS,
+    TON: process.env.TON_ADDRESS
+  };
+
+  const rates = await getRates();
+
+  const result = {};
+  for (const coin of Object.keys(wallets)) {
+    result[coin] = {
+      address: wallets[coin],
+      qr: await generateQR(wallets[coin]),
+      rateRub: rates[coin]
+    };
   }
 
-  const qr = {}
-  for (const key in wallets) {
-    qr[key] = await QRCode.toDataURL(wallets[key])
-  }
+  res.json(result);
+});
 
-  res.json({ wallets, qr })
-})
-
-module.exports = router
+export default router;

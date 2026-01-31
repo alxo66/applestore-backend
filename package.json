@@ -1,13 +1,14 @@
 {
   "name": "applestore-backend",
-  "type": "module",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "cron": "node cron/checkPayments.js"
+    "start": "node server.js"
   },
   "dependencies": {
-    "node-fetch": "^3.3.2",
-    "express": "^4.19.2"
+    "axios": "^1.6.7",
+    "express": "^4.19.2",
+    "node-cron": "^3.0.3",
+    "qrcode": "^1.5.4"
   }
 }

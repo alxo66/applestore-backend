@@ -1,10 +1,11 @@
-const checkPayment = async (address, amount) => {
-  // TODO:
-  // BTC: Blockstream
-  // ETH/USDT: Etherscan
-  // TON: tonapi.io
+const axios = require('axios')
 
-  return false
+const BTC_ADDRESS = process.env.BTC_ADDRESS
+
+// ВРЕМЕННО: мок
+async function checkBTC() {
+  // здесь позже подключим реальную БД
+  return []
 }
 
-module.exports = checkPayment
+module.exports = { checkBTC }

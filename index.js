@@ -205,3 +205,25 @@ app.post("/api/order/confirm", (req, res) => {
 app.listen(PORT, () =>
   console.log("Server running on port", PORT)
 );
+/* =======================
+   CANCEL ORDER
+======================= */
+
+app.post("/api/order/cancel", (req, res) => {
+  const userId = "demo";
+  const { orderId } = req.body;
+
+  const u = users[userId];
+  const order = u.orders.find(o => o.id === orderId);
+
+  if (!order) return res.status(404).json({ error: "Order not found" });
+  if (order.status !== "reserved")
+    return res.status(400).json({ error: "Wrong status" });
+
+  order.status = "cancelled";
+  u.reserved -= order.price;
+
+  tgNotify(`❌ Заказ отменён\n${order.product}`);
+
+  res.json({ success: true });
+});

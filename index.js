@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const QRCode = require("qrcode");
+const fetch = require("node-fetch");
 
 const app = express();
 app.use(cors());
@@ -8,90 +8,200 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
 
-/* ================== ДАННЫЕ (ПОКА ЗАГЛУШКИ) ================== */
+/* =======================
+   CONFIG
+======================= */
 
-let balance = 12500;
+const CRYPTOBOT_TOKEN = process.env.CRYPTOBOT_TOKEN;
+const TELEGRAM_BOT_TOKEN = process.env.TG_BOT_TOKEN;
+const TELEGRAM_ADMIN_CHAT = process.env.TG_ADMIN_CHAT;
 
-let deposits = [
-  {
-    date: Date.now() - 86400000,
-    currency: "BTC",
-    amount: 0.002,
-    status: "done"
-  },
-  {
-    date: Date.now() - 3600000,
-    currency: "USDT",
-    amount: 100,
-    status: "pending"
+/* =======================
+   IN-MEMORY DB (MVP)
+======================= */
+
+const users = {
+  demo: {
+    balance: 0,
+    reserved: 0,
+    deposits: [],
+    orders: []
   }
-];
-
-let orders = [
-  {
-    date: Date.now() - 7200000,
-    product: "Apple Gift Card 500₽",
-    price: 500,
-    status: "done"
-  }
-];
-
-/* ================== КОШЕЛЬКИ ================== */
-
-const wallets = {
-  BTC: "bc1qlgf034j5nhqh0ltsqnhrepchlxwlykrtujvupq",
-  ETH: "0x5Fc25f19E18Dfc7d19595cB7d1eB0D0605b9A3FA",
-  USDT: "TMM1xGXxAY9R66hGPxKNfxo81KrmdyrszE",
-  TON: "UQD-XSYf6P-NyjbSJYDHsgHnk0e5CiJQ2-NCZddro_5-c8B4"
 };
 
-const ratesRub = {
-  BTC: 5800000,
-  ETH: 300000,
-  USDT: 95,
-  TON: 230
-};
+/* =======================
+   HELPERS
+======================= */
 
-/* ================== API ================== */
+async function tgNotify(text) {
+  if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_ADMIN_CHAT) return;
+  await fetch(
+    `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: TELEGRAM_ADMIN_CHAT,
+        text
+      })
+    }
+  );
+}
 
-app.get("/", (req, res) => {
+/* =======================
+   HEALTH
+======================= */
+
+app.get("/", (_, res) => {
   res.send("AppleStore backend is running 🚀");
 });
 
-app.get("/api/balance", (req, res) => {
-  res.json({ balance });
-});
+/* =======================
+   CREATE CRYPTO INVOICE
+======================= */
 
-app.get("/api/deposits", (req, res) => {
-  res.json(deposits);
-});
+app.post("/api/crypto/invoice", async (req, res) => {
+  const { userId = "demo", amount, asset } = req.body;
 
-app.get("/api/orders", (req, res) => {
-  res.json(orders);
-});
+  if (!users[userId]) return res.status(404).json({ error: "User not found" });
 
-app.get("/api/deposit", async (req, res) => {
   try {
-    const result = {};
+    const response = await fetch("https://pay.crypt.bot/api/createInvoice", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Crypto-Pay-API-Token": CRYPTOBOT_TOKEN
+      },
+      body: JSON.stringify({
+        asset,
+        amount,
+        description: "Apple Store balance top-up",
+        payload: userId
+      })
+    });
 
-    for (const coin of Object.keys(wallets)) {
-      const qr = await QRCode.toDataURL(wallets[coin]);
-      result[coin] = {
-        address: wallets[coin],
-        qr,
-        rateRub: ratesRub[coin]
-      };
-    }
+    const data = await response.json();
+    if (!data.ok) return res.status(400).json(data);
 
-    res.json(result);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Deposit error" });
+    users[userId].deposits.push({
+      invoice_id: data.result.invoice_id,
+      amount,
+      asset,
+      status: "pending",
+      date: Date.now()
+    });
+
+    res.json({ pay_url: data.result.pay_url });
+  } catch (e) {
+    res.status(500).json({ error: "Invoice error" });
   }
 });
 
-/* ================== START ================== */
+/* =======================
+   CRYPTOBOT WEBHOOK
+======================= */
 
-app.listen(PORT, () => {
-  console.log("Server running on port", PORT);
+app.post("/api/crypto/webhook", (req, res) => {
+  const update = req.body;
+
+  if (update.update_type === "invoice_paid") {
+    const inv = update.payload;
+    const userId = inv.payload;
+
+    const user = users[userId];
+    if (!user) return res.sendStatus(200);
+
+    const dep = user.deposits.find(
+      d => d.invoice_id === inv.invoice_id
+    );
+
+    if (dep && dep.status !== "done") {
+      dep.status = "done";
+      user.balance += Number(dep.amount);
+
+      tgNotify(
+        `💰 Пополнение\nПользователь: ${userId}\n${dep.amount} ${dep.asset}`
+      );
+    }
+  }
+
+  res.sendStatus(200);
 });
+
+/* =======================
+   USER BALANCE
+======================= */
+
+app.get("/api/cabinet", (req, res) => {
+  const userId = "demo";
+  const u = users[userId];
+
+  res.json({
+    balance: u.balance,
+    reserved: u.reserved,
+    deposits: u.deposits,
+    orders: u.orders
+  });
+});
+
+/* =======================
+   CREATE ORDER
+======================= */
+
+app.post("/api/order", (req, res) => {
+  const userId = "demo";
+  const { product, price } = req.body;
+
+  const u = users[userId];
+  if (u.balance - u.reserved < price) {
+    return res.status(400).json({ error: "Not enough balance" });
+  }
+
+  u.reserved += price;
+
+  const order = {
+    id: Date.now(),
+    product,
+    price,
+    status: "reserved"
+  };
+
+  u.orders.push(order);
+
+  tgNotify(`📦 Новый заказ\n${product}\n$${price}`);
+
+  res.json({ success: true, order });
+});
+
+/* =======================
+   CONFIRM DELIVERY
+======================= */
+
+app.post("/api/order/confirm", (req, res) => {
+  const userId = "demo";
+  const { orderId } = req.body;
+
+  const u = users[userId];
+  const order = u.orders.find(o => o.id === orderId);
+
+  if (!order) return res.status(404).json({ error: "Order not found" });
+
+  if (order.status !== "reserved")
+    return res.status(400).json({ error: "Wrong status" });
+
+  order.status = "completed";
+  u.reserved -= order.price;
+  u.balance -= order.price;
+
+  tgNotify(`✅ Заказ завершён\n${order.product}`);
+
+  res.json({ success: true });
+});
+
+/* =======================
+   START
+======================= */
+
+app.listen(PORT, () =>
+  console.log("Server running on port", PORT)
+);

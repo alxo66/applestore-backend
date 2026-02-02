@@ -21,20 +21,16 @@ const products = [
     // iPhone 15 Series
     { id: "i15promax", title: "iPhone 15 Pro Max", price: 899, description: "Первый титановый iPhone.", specs: ["A17 Pro", "USB-C"], image: "https://static.re-store.ru/upload/resize_cache/iblock/dc0/100500_800_140cd750bba9870f18aada2478b24840a/81ysro3zyue28kqvn357mugae05nsgvl.jpg" },
     { id: "i15pro", title: "iPhone 15 Pro", price: 799, description: "Компактный титан.", specs: ["A17 Pro", "USB-C"], image: "https://static.re-store.ru/upload/resize_cache/iblock/92c/100500_800_140cd750bba9870f18aada2478b24840a/e79u588p4583y83sno6z646l96n6o6b6.jpg" },
-    { id: "i15", title: "iPhone 15", price: 599, description: "Dynamic Island для всех.", specs: ["A16", "USB-C"], image: "https://static.re-store.ru/upload/resize_cache/iblock/73b/100500_800_140cd750bba9870f18aada2478b24840a/u87c14773c3b06362873428f572718134.jpg" },
-
-    // iPhone 14 Series
-    { id: "i14", title: "iPhone 14", price: 499, description: "Проверенная классика.", specs: ["A15", "FaceID"], image: "https://static.re-store.ru/upload/resize_cache/iblock/e73/100500_800_140cd750bba9870f18aada2478b24840a/e73b1853610214a1a367468641121633d.jpg" },
-    { id: "i14plus", title: "iPhone 14 Plus", price: 599, description: "Максимум за свои деньги.", specs: ["A15", "6.7\""], image: "https://static.re-store.ru/upload/resize_cache/iblock/127/100500_800_140cd750bba9870f18aada2478b24840a/1271168f1f7274092497645f061f94d9.jpg" },
+    { id: "i15", title: "Apple iPhone 15 Plus", price: 599, description: "Dynamic Island для всех.", specs: ["512GB"], image: "https://static.re-store.ru/upload/resize_cache/iblock/b26/100500_800_140cd750bba9870f18aada2478b24840a/sbp132akcddo5g2yvmjvofpib40b6c41.jpg" },
 
     // iPads
-    { id: "ipadpro", title: "iPad Pro M4", price: 999, description: "Тонкий. Мощный. OLED.", specs: ["Чип M4", "Ultra Retina"], image: "https://static.re-store.ru/upload/resize_cache/iblock/21d/100500_800_140cd750bba9870f18aada2478b24840a/21d3f9b23f2f84b6f122864f7b4916a2.jpg" },
-    { id: "ipadair", title: "iPad Air M2", price: 599, description: "Мощь для творчества.", specs: ["Чип M2", "11\""], image: "https://static.re-store.ru/upload/resize_cache/iblock/93a/100500_800_140cd750bba9870f18aada2478b24840a/93a058449c951978939678129759495c.jpg" },
-    { id: "ipadmini", title: "iPad mini 6", price: 499, description: "Мощь в твоем кармане.", specs: ["A15", "8.3\""], image: "https://static.re-store.ru/upload/resize_cache/iblock/73b/100500_800_140cd750bba9870f18aada2478b24840a/73b1853610214a1a367468641121633d.jpg" },
+    { id: "ipadpro", title: "Apple iPad Pro 13 (2025)", price: 999, description: "Тонкий. Мощный. OLED.", specs: ["M5, Wi-Fi"], image: "https://static.re-store.ru/upload/resize_cache/iblock/c31/100500_800_140cd750bba9870f18aada2478b24840a/3a89519konnv8x0gnp2cry8q8mnd6a88.jpg" },
+    { id: "ipadair", title: "Apple iPad Air (2025)", price: 599, description: "Мощь для творчества.", specs: ["M3 13" Wi-Fi 128 ГБ\""], image: "https://static.re-store.ru/upload/resize_cache/iblock/256/100500_800_140cd750bba9870f18aada2478b24840a/forvpclwmz5f57hgg70ch0ieawax9f7u.png" },
+    { id: "ipadmini", title: "Apple iPad mini (2024)", price: 499, description: "Мощь в твоем кармане.", specs: ["8,3" Wi-Fi 256 ГБ\""], image: "https://static.re-store.ru/upload/resize_cache/iblock/077/100500_800_140cd750bba9870f18aada2478b24840a/qm5ed6nwk1mlcxmdm9i3xeq5gq56dyyl.jpg" },
 
     // MacBooks
-    { id: "mbp14", title: "MacBook Pro 14\"", price: 1599, description: "Для профи.", specs: ["M4 Pro", "XDR Display"], image: "https://static.re-store.ru/upload/resize_cache/iblock/873/100500_800_140cd750bba9870f18aada2478b24840a/873058449c951978939678129759495c.jpg" },
-    { id: "m4air13", title: "MacBook Air 13\"", price: 1099, description: "Тонкий и мощный.", specs: ["M4 Chip", "Безвентиляторный"], image: "https://static.re-store.ru/upload/resize_cache/iblock/a87/100500_800_140cd750bba9870f18aada2478b24840a/a8739401929491249129412941294129.jpg" },
+    { id: "mbp14", title: "Apple MacBook Air 13\"", price: 1599, description: "Для профи.", specs: ["M4, 10C CPU/10C GPU, 2025), 16 ГБ, 512 ГБ SSD"], image: "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg" },
+    { id: "m4air13", title: "Apple MacBook Air 13\"", price: 1099, description: "Тонкий и мощный.", specs: ["M4, 10C CPU/10C GPU, 2025), 16 ГБ, 512 ГБ SSD"], image: "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg" },
     { id: "mbp16", title: "Apple MacBook Pro 14\"", price: 2499, description: "Максимум производительности.", specs: ["M5 10C CPU, 10C GPU, 2025) 24 ГБ, 1 ТБ SSD"], image: "https://static.re-store.ru/upload/resize_cache/iblock/a9e/100500_800_140cd750bba9870f18aada2478b24840a/ehkghuinyu3z0ib89z6j3x1cz2jguk08.jpg" }
 ];
 

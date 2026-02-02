@@ -25,8 +25,8 @@ const products = [
 
     // iPads
     { id: "ipadpro", title: "Apple iPad Pro 13 (2025)", price: 999, description: "Тонкий. Мощный. OLED.", specs: ["M5, Wi-Fi"], image: "https://static.re-store.ru/upload/resize_cache/iblock/c31/100500_800_140cd750bba9870f18aada2478b24840a/3a89519konnv8x0gnp2cry8q8mnd6a88.jpg" },
-    { id: "ipadair", title: "Apple iPad Air (2025)", price: 599, description: "Мощь для творчества.", specs: ["M3 13" Wi-Fi 128 ГБ\""], image: "https://static.re-store.ru/upload/resize_cache/iblock/256/100500_800_140cd750bba9870f18aada2478b24840a/forvpclwmz5f57hgg70ch0ieawax9f7u.png" },
-    { id: "ipadmini", title: "Apple iPad mini (2024)", price: 499, description: "Мощь в твоем кармане.", specs: ["8,3" Wi-Fi 256 ГБ\""], image: "https://static.re-store.ru/upload/resize_cache/iblock/077/100500_800_140cd750bba9870f18aada2478b24840a/qm5ed6nwk1mlcxmdm9i3xeq5gq56dyyl.jpg" },
+    { id: "ipadair", title: "Apple iPad Air (2025)", price: 599, description: "Мощь для творчества.", specs: ["M3 13" 128 ГБ\""], image: "https://static.re-store.ru/upload/resize_cache/iblock/256/100500_800_140cd750bba9870f18aada2478b24840a/forvpclwmz5f57hgg70ch0ieawax9f7u.png" },
+    { id: "ipadmini", title: "Apple iPad mini (2024)", price: 499, description: "Мощь в твоем кармане.", specs: ["8,3" 256 ГБ\""], image: "https://static.re-store.ru/upload/resize_cache/iblock/077/100500_800_140cd750bba9870f18aada2478b24840a/qm5ed6nwk1mlcxmdm9i3xeq5gq56dyyl.jpg" },
 
     // MacBooks
     { id: "mbp14", title: "Apple MacBook Air 13\"", price: 1599, description: "Для профи.", specs: ["M4, 10C CPU/10C GPU, 2025), 16 ГБ, 512 ГБ SSD"], image: "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg" },

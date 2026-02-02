@@ -55,6 +55,27 @@ app.use("/api/deposit", authMiddleware, depositRoute);
 
 // 6. Запуск сервера
 const PORT = process.env.PORT || 3000;
+
+// Обработчик уведомлений от CryptoBot
+app.post("/api/webhook/cryptopay", (req, res) => {
+    const { update_type, payload } = req.body;
+
+    // Если оплата прошла успешно
+    if (update_type === "invoice_paid") {
+        const amount = parseFloat(payload.amount);
+        const description = payload.description;
+        
+        // Здесь логика поиска пользователя. 
+        // В идеале при создании инвойса в 'payload' нужно передавать userId,
+        // чтобы здесь знать, кому именно добавить баланс.
+        console.log(`Получена оплата: ${amount} за ${description}`);
+        
+        // В простейшем случае (если userId зашит в описание или payload):
+        // users[payload.user_id].balance += amount;
+    }
+    
+    res.status(200).send("OK");
+});
 app.listen(PORT, "0.0.0.0", () => {
     console.log(`>>> Server is ACTIVE on port ${PORT}`);
 });

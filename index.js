@@ -35,7 +35,7 @@ const products = [
     // MacBooks
     { id: "mbp14", title: "MacBook Pro 14\"", price: 1599, description: "Для профи.", specs: ["M4 Pro", "XDR Display"], image: "https://static.re-store.ru/upload/resize_cache/iblock/873/100500_800_140cd750bba9870f18aada2478b24840a/873058449c951978939678129759495c.jpg" },
     { id: "m4air13", title: "MacBook Air 13\"", price: 1099, description: "Тонкий и мощный.", specs: ["M4 Chip", "Безвентиляторный"], image: "https://static.re-store.ru/upload/resize_cache/iblock/a87/100500_800_140cd750bba9870f18aada2478b24840a/a8739401929491249129412941294129.jpg" },
-    { id: "mbp16", title: "MacBook Pro 16\"", price: 2499, description: "Максимум производительности.", specs: ["M4 Max", "32GB RAM"], image: "https://static.re-store.ru/upload/resize_cache/iblock/427/100500_800_140cd750bba9870f18aada2478b24840a/427058449c951978939678129759495c.jpg" }
+    { id: "mbp16", title: "Apple MacBook Pro 14"\"", price: 2499, description: "Максимум производительности.", specs: ["M5 10C CPU, 10C GPU, 2025) 24 ГБ, 1 ТБ SSD"], image: "https://static.re-store.ru/upload/resize_cache/iblock/a9e/100500_800_140cd750bba9870f18aada2478b24840a/ehkghuinyu3z0ib89z6j3x1cz2jguk08.jpg" }
 ];
 
 app.get('/api/products', (req, res) => {

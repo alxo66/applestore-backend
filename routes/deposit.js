@@ -1,38 +1,44 @@
 const express = require("express");
-const axios = require("axios"); // Не забудь npm install axios
+const axios = require("axios");
 const router = express.Router();
 
 const CRYPTO_PAY_API = "https://pay.crypt.bot/api/createInvoice";
 
 router.post("/", async (req, res) => {
     try {
-        const { amount, asset } = req.body; // Получаем сумму и валюту (USDT, TON и т.д.)
+        // Извлекаем данные. Фронтенд присылает 'amount' и 'currency'
+        const { amount, currency } = req.body; 
         const token = process.env.CRYPTO_PAY_TOKEN;
 
+        console.log(`Попытка создания счета: ${amount} ${currency}`);
+
         if (!token) {
-            return res.status(500).json({ error: "API токен не настроен на сервере" });
+            console.error("ОШИБКА: CRYPTO_PAY_TOKEN не найден в Variables Railway");
+            return res.status(500).json({ error: "Сервер не настроен для оплаты" });
         }
 
+        // Запрос к CryptoBot
         const response = await axios.post(CRYPTO_PAY_API, {
-            asset: asset,
+            asset: currency, // BTC, ETH, USDT, TON
             amount: amount.toString(),
-            description: "Пополнение баланса Apple Store",
+            description: `Пополнение счета в Apple Store (ID: ${req.userId})`,
             paid_btn_name: "openBot",
-            // Куда вернуть пользователя после оплаты (твоя страница кабинета)
-            paid_btn_url: "https://applesite-phi.vercel.app/cabinet.html" 
+            paid_btn_url: "https://applesite-phi.vercel.app/cabinet.html"
         }, {
             headers: { "Crypto-Pay-API-Token": token }
         });
 
-        if (response.data.ok) {
-            // Отправляем фронтенду реальную ссылку на оплату
+        if (response.data && response.data.ok) {
+            console.log("Инвойс успешно создан:", response.data.result.pay_url);
+            // Возвращаем объект с полем pay_url, которое ждет фронтенд
             res.json({ pay_url: response.data.result.pay_url });
         } else {
-            res.status(400).json({ error: "CryptoBot отклонил запрос" });
+            console.error("CryptoBot вернул ошибку:", response.data);
+            res.status(400).json({ error: "Криптобот отклонил запрос" });
         }
     } catch (error) {
-        console.error("Ошибка API:", error.response?.data || error.message);
-        res.status(500).json({ error: "Ошибка при создании счета" });
+        console.error("Ошибка при связи с CryptoBot API:", error.response?.data || error.message);
+        res.status(500).json({ error: "Внутренняя ошибка сервера оплаты" });
     }
 });
 

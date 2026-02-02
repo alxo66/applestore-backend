@@ -8,7 +8,7 @@ app.use(express.json());
 const users = {}; 
 
 const products = [
-    // iPhone 17 Series
+    // iPhone 17 Series (Используем концептуальные или актуальные про-модели для заглушки высокого качества)
     { id: "i17promax", title: "iPhone 17 Pro Max", price: 1199, description: "Будущее в титановом корпусе.", specs: ["Экран 6.9\"", "A19 Pro", "5x Zoom"], image: "https://static.re-store.ru/upload/resize_cache/iblock/3e7/800_800_1/c6b0ndzv7rqf8u9c456xwvgolvkkdf11.jpg" },
     { id: "i17pro", title: "iPhone 17 Pro", price: 999, description: "Профессиональная мощь.", specs: ["A19 Pro", "6.3\"", "120Hz"], image: "https://static.re-store.ru/upload/resize_cache/iblock/425/800_800_1/63zba8vr1pr1qx83hjr8hq3qd76uj8of.jpg" },
     { id: "i17", title: "iPhone 17", price: 799, description: "Новый стандарт.", specs: ["A19 Bionic", "6.1\"", "48Mp"], image: "https://static.re-store.ru/upload/resize_cache/iblock/2f7/800_800_1/d3tf4gy4fvsh1uacmwk9cvfx576r6hfp.jpg" },
@@ -20,23 +20,23 @@ const products = [
     { id: "i16plus", title: "iPhone 16 Plus", price: 899, description: "Большой экран, большая батарея.", specs: ["A18", "6.7\""], image: "https://static.re-store.ru/upload/resize_cache/iblock/e54/800_800_1/2ejqmg2ifqb3bmoya38k9u3owbqygrz1.jpg" },
 
     // iPhone 15 Series
-    { id: "i15promax", title: "iPhone 15 Pro Max", price: 899, description: "Первый титановый iPhone.", specs: ["A17 Pro", "USB-C"], image: "https://v-apple.ru/image/catalog/tovary/iphone/15/pro-max/blue/1.jpg" },
-    { id: "i15pro", title: "iPhone 15 Pro", price: 799, description: "Компактный титан.", specs: ["A17 Pro", "USB-C"], image: "https://v-apple.ru/image/catalog/tovary/iphone/15/pro/black/1.jpg" },
-    { id: "i15", title: "iPhone 15", price: 599, description: "Dynamic Island для всех.", specs: ["A16", "USB-C"], image: "https://v-apple.ru/image/catalog/tovary/iphone/15/base/green/1.jpg" },
+    { id: "i15promax", title: "iPhone 15 Pro Max", price: 899, description: "Первый титановый iPhone.", specs: ["A17 Pro", "USB-C"], image: "https://static.re-store.ru/upload/resize_cache/iblock/7f3/800_800_1/7f3d538f5f6390141679051069f2129c.jpg" },
+    { id: "i15pro", title: "iPhone 15 Pro", price: 799, description: "Компактный титан.", specs: ["A17 Pro", "USB-C"], image: "https://static.re-store.ru/upload/resize_cache/iblock/08b/800_800_1/08bc7418a099f7d025170d10d65561a3.jpg" },
+    { id: "i15", title: "iPhone 15", price: 599, description: "Dynamic Island для всех.", specs: ["A16", "USB-C"], image: "https://static.re-store.ru/upload/resize_cache/iblock/2a4/800_800_1/2a4773c3b06362873428f572718134a6.jpg" },
 
     // iPhone 14 Series
-    { id: "i14", title: "iPhone 14", price: 499, description: "Проверенная классика.", specs: ["A15", "FaceID"], image: "https://v-apple.ru/image/catalog/tovary/iphone/14/base/purple/1.jpg" },
-    { id: "i14plus", title: "iPhone 14 Plus", price: 599, description: "Максимум за свои деньги.", specs: ["A15", "6.7\""], image: "https://v-apple.ru/image/catalog/tovary/iphone/14/base/blue/1.jpg" },
+    { id: "i14", title: "iPhone 14", price: 499, description: "Проверенная классика.", specs: ["A15", "FaceID"], image: "https://static.re-store.ru/upload/resize_cache/iblock/88b/800_800_1/88b50f79261314603370395642e316d8.jpg" },
+    { id: "i14plus", title: "iPhone 14 Plus", price: 599, description: "Максимум за свои деньги.", specs: ["A15", "6.7\""], image: "https://static.re-store.ru/upload/resize_cache/iblock/127/800_800_1/1271168f1f7274092497645f061f94d9.jpg" },
 
     // iPads
-    { id: "ipadpro", title: "iPad Pro M4", price: 999, description: "Тонкий. Мощный. OLED.", specs: ["Чип M4", "Ultra Retina"], image: "https://v-apple.ru/image/catalog/tovary/ipad/pro-m4/11/black/1.jpg" },
-    { id: "ipadair", title: "iPad Air M2", price: 599, description: "Мощь для творчества.", specs: ["Чип M2", "11\""], image: "https://v-apple.ru/image/catalog/tovary/ipad/air-m2/11/blue/1.jpg" },
-    { id: "ipadmini", title: "iPad mini 6", price: 499, description: "Мощь в твоем кармане.", specs: ["A15", "8.3\""], image: "https://v-apple.ru/image/catalog/tovary/ipad/mini-6/space-gray/1.jpg" },
+    { id: "ipadpro", title: "iPad Pro M4", price: 999, description: "Тонкий. Мощный. OLED.", specs: ["Чип M4", "Ultra Retina"], image: "https://static.re-store.ru/upload/resize_cache/iblock/21d/800_800_1/21d3f9b23f2f84b6f122864f7b4916a2.jpg" },
+    { id: "ipadair", title: "iPad Air M2", price: 599, description: "Мощь для творчества.", specs: ["Чип M2", "11\""], image: "https://static.re-store.ru/upload/resize_cache/iblock/93a/800_800_1/93a058449c951978939678129759495c.jpg" },
+    { id: "ipadmini", title: "iPad mini 6", price: 499, description: "Мощь в твоем кармане.", specs: ["A15", "8.3\""], image: "https://static.re-store.ru/upload/resize_cache/iblock/73b/800_800_1/73b1853610214a1a367468641121633d.jpg" },
 
     // MacBooks
-    { id: "mbp14", title: "MacBook Pro 14\"", price: 1599, description: "Для профи.", specs: ["M4 Pro", "XDR Display"], image: "https://v-apple.ru/image/catalog/tovary/macbook/pro-14-m3/silver/1.jpg" },
-    { id: "m4air13", title: "MacBook Air 13\"", price: 1099, description: "Тонкий и мощный.", specs: ["M4 Chip", "Безвентиляторный"], image: "https://v-apple.ru/image/catalog/tovary/macbook/air-13-m3/starlight/1.jpg" },
-    { id: "mbp16", title: "MacBook Pro 16\"", price: 2499, description: "Максимум производительности.", specs: ["M4 Max", "32GB RAM"], image: "https://v-apple.ru/image/catalog/tovary/macbook/pro-16-m3/black/1.jpg" }
+    { id: "mbp14", title: "MacBook Pro 14\"", price: 1599, description: "Для профи.", specs: ["M4 Pro", "XDR Display"], image: "https://static.re-store.ru/upload/resize_cache/iblock/873/800_800_1/873058449c951978939678129759495c.jpg" },
+    { id: "m4air13", title: "MacBook Air 13\"", price: 1099, description: "Тонкий и мощный.", specs: ["M4 Chip", "Безвентиляторный"], image: "https://static.re-store.ru/upload/resize_cache/iblock/a87/800_800_1/a8739401929491249129412941294129.jpg" },
+    { id: "mbp16", title: "MacBook Pro 16\"", price: 2499, description: "Максимум производительности.", specs: ["M4 Max", "32GB RAM"], image: "https://static.re-store.ru/upload/resize_cache/iblock/427/800_800_1/427058449c951978939678129759495c.jpg" }
 ];
 
 const authMiddleware = (req, res, next) => {

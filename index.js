@@ -20,7 +20,6 @@ const products = [
 
     // iPhone 15 Series
     { id: "i15promax", title: "iPhone 15 Pro Max", price: 899, description: "Первый титановый iPhone.", specs: ["A17 Pro", "USB-C"], image: "https://static.re-store.ru/upload/resize_cache/iblock/dc0/100500_800_140cd750bba9870f18aada2478b24840a/81ysro3zyue28kqvn357mugae05nsgvl.jpg" },
-    { id: "i15pro", title: "iPhone 15 Pro", price: 799, description: "Компактный титан.", specs: ["A17 Pro", "USB-C"], image: "https://static.re-store.ru/upload/resize_cache/iblock/92c/100500_800_140cd750bba9870f18aada2478b24840a/e79u588p4583y83sno6z646l96n6o6b6.jpg" },
     { id: "i15", title: "Apple iPhone 15 Plus", price: 599, description: "Dynamic Island для всех.", specs: ["512GB"], image: "https://static.re-store.ru/upload/resize_cache/iblock/b26/100500_800_140cd750bba9870f18aada2478b24840a/sbp132akcddo5g2yvmjvofpib40b6c41.jpg" },
 
     // iPads

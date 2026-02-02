@@ -1,41 +1,40 @@
 const express = require("express");
-const { getRates } = require("../services/rates.js");
-const { generateQR } = require("../services/qr.js");
-
+const axios = require("axios"); // Убедись, что axios установлен
 const router = express.Router();
 
-// Меняем на POST, так как фронтенд отправляет данные (сумма, валюта)
+const CRYPTO_PAY_API = "https://pay.crypt.bot/api/createInvoice";
+
 router.post("/", async (req, res) => {
     try {
-        const { amount, currency } = req.body; // Данные с фронтенда
+        const { amount, currency } = req.body;
+        const token = process.env.CRYPTO_PAY_TOKEN;
 
-        const wallets = {
-            BTC: process.env.BTC_ADDRESS || "ВАШ_BTC_АДРЕС",
-            ETH: process.env.ETH_ADDRESS || "ВАШ_ETH_АДРЕС",
-            USDT: process.env.USDT_ADDRESS || "ВАШ_USDT_АДРЕС",
-            TON: process.env.TON_ADDRESS || "ВАШ_TON_АДРЕС"
-        };
+        if (!token) {
+            console.error("ОШИБКА: CRYPTO_PAY_TOKEN не задан в Variables!");
+            return res.status(500).json({ error: "Ошибка конфигурации оплаты" });
+        }
 
-        const rates = await getRates();
-        const selectedWallet = wallets[currency] || wallets["USDT"];
-        const currentRate = rates[currency] || rates["USDT"];
-
-        // Расчет суммы в крипте (например, если пополняем на 1000 руб)
-        const cryptoAmount = (amount / currentRate).toFixed(6);
-
-        res.json({
-            success: true,
-            address: selectedWallet,
-            amountCrypto: cryptoAmount,
-            qr: await generateQR(selectedWallet),
-            // Если ты используешь CryptoBot, здесь должна быть логика создания инвойса через их API
-            // Для теста возвращаем ссылку (pay_url), которую ждет фронтенд
-            pay_url: `https://t.me/CryptoBot?start=pay_${Date.now()}` 
+        // Запрос к CryptoBot API для создания реального счета
+        const response = await axios.post(CRYPTO_PAY_API, {
+            asset: currency, // BTC, ETH, USDT, TON
+            amount: amount.toString(),
+            description: `Пополнение баланса Apple Store`,
+            paid_btn_name: "openBot",
+            paid_btn_url: "https://applesite-phi.vercel.app/cabinet" 
+        }, {
+            headers: { "Crypto-Pay-API-Token": token }
         });
+
+        if (response.data.ok) {
+            // Возвращаем реальную ссылку на оплату
+            res.json({ pay_url: response.data.result.pay_url });
+        } else {
+            throw new Error("CryptoBot API вернул ошибку");
+        }
     } catch (error) {
-        console.error("Deposit Error:", error);
-        res.status(500).json({ error: "Ошибка сервера при создании счета" });
+        console.error("Ошибка создания инвойса:", error.response?.data || error.message);
+        res.status(500).json({ error: "Не удалось создать счет" });
     }
 });
 
-module.exports = router; // ВАЖНО: используем module.exports для CommonJS
+module.exports = router;

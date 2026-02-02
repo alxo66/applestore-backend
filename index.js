@@ -8,7 +8,7 @@ app.use(express.json());
 // БЕЗОПАСНЫЙ ИМПОРТ: указываем полные пути с .js
 const telegram = require("./services/telegram.js");
 const rates = require("./services/rates.js");
-const depositRoute = require("./routes/deposit.js");
+app.use("/api/deposit", authMiddleware, depositRoute);
 
 const users = {}; 
 

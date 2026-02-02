@@ -1,60 +1,137 @@
-const express = require("express");
-const cors = require("cors");
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    
+    <title>Apple Store | Premium Reseller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-const app = express();
-app.use(cors());
-app.use(express.json());
+<header class="header">
+    <a href="index.html" class="logo">Apple Store</a>
+    <nav>
+        <a href="index.html" class="active">Магазин</a>
+        <a href="cabinet.html">Личный кабинет</a>
+        <a href="shipping.html">Доставка</a>
+    </nav>
+</header>
 
-const users = {}; 
+<div class="container">
+    <h1>Магазин. <span>Лучшее от Apple.</span></h1>
+    <div id="products" class="products">
+        <div class="loader-container" style="grid-column: 1/-1; text-align: center; padding: 100px;">
+            <p>Загрузка актуального ассортимента...</p>
+        </div>
+    </div>
+</div>
 
-const products = [
-    // iPhone 17 Series
-    { id: "i17promax", title: "iPhone 17 Pro Max", price: 1199, description: "Будущее в титановом корпусе.", specs: ["Экран 6.9\"", "A19 Pro", "5x Zoom"], image: "https://static.re-store.ru/upload/resize_cache/iblock/3e7/100500_800_140cd750bba9870f18aada2478b24840a/c6b0ndzv7rqf8u9c456xwvgolvkkdf11.jpg" },
-    { id: "i17pro", title: "iPhone 17 Pro", price: 999, description: "Профессиональная мощь.", specs: ["A19 Pro", "6.3\"", "120Hz"], image: "https://static.re-store.ru/upload/resize_cache/iblock/eac/100500_800_140cd750bba9870f18aada2478b24840a/irjuxxbba1paqoho9p0diyjyy0f40lxm.jpg" },
-    { id: "i17", title: "iPhone 17", price: 799, description: "Новый стандарт.", specs: ["A19 Bionic", "6.1\"", "48Mp"], image: "https://static.re-store.ru/upload/resize_cache/iblock/908/100500_800_140cd750bba9870f18aada2478b24840a/wcrl0q67e1x6akxtyi0690ym4r3kfme6.jpg" },
+<footer>
+    <p>Copyright © 2026 Apple Store. Все права защищены. Цены указаны в USDT.</p>
+</footer>
 
-    // iPhone 16 Series
-    { id: "i16promax", title: "iPhone 16 Pro Max", price: 1099, description: "Apple Intelligence.", specs: ["A18 Pro", "Титановый корпус", "Camera Control"], image: "https://static.re-store.ru/upload/resize_cache/iblock/e7a/100500_800_140cd750bba9870f18aada2478b24840a/3fkzizh2j3ecnj83n008g53uk15biuup.jpg" },
-    { id: "i16pro", title: "iPhone 16 Pro", price: 999, description: "Мощь в компактном размере.", specs: ["A18 Pro", "4K 120fps"], image: "https://static.re-store.ru/upload/resize_cache/iblock/ca9/100500_800_140cd750bba9870f18aada2478b24840a/1um5lfka1r127hpc1c6y2r73q4x2l339.jpg" },
-    { id: "i16", title: "iPhone 16", price: 799, description: "Новая эра Apple.", specs: ["A18 Chip", "Action Button"], image: "https://static.re-store.ru/upload/resize_cache/iblock/938/100500_800_140cd750bba9870f18aada2478b24840a/0nezbz8sc7xr6vzyjmw7tjzx9al17n95.jpg" },
-    { id: "i16plus", title: "iPhone 16 Plus", price: 899, description: "Большой экран, большая батарея.", specs: ["A18", "6.7\""], image: "https://static.re-store.ru/upload/resize_cache/iblock/e54/100500_800_140cd750bba9870f18aada2478b24840a/2ejqmg2ifqb3bmoya38k9u3owbqygrz1.jpg" },
+<script type="module">
+    import { getProducts, createOrder } from './api.js';
 
-    // iPhone 15 Series
-    { id: "i15promax", title: "iPhone 15 Pro Max", price: 899, description: "Первый титановый iPhone.", specs: ["A17 Pro", "USB-C"], image: "https://static.re-store.ru/upload/resize_cache/iblock/dc0/100500_800_140cd750bba9870f18aada2478b24840a/81ysro3zyue28kqvn357mugae05nsgvl.jpg" },
-    { id: "i15", title: "iPhone 15", price: 599, description: "Dynamic Island для всех.", specs: ["A16", "USB-C"], image: "https://static.re-store.ru/upload/resize_cache/iblock/fc1/100500_800_140cd750bba9870f18aada2478b24840a/m6p2v42kxrzpd3a7ls5nq91z2odotg4c.jpg" },
+    async function loadProducts() {
+        const container = document.getElementById("products");
+        try {
+            const products = await getProducts();
+            if (!products || products.length === 0) {
+                container.innerHTML = `<p style="grid-column: 1/-1; text-align: center;">Товары временно отсутствуют.</p>`;
+                return;
+            }
 
-    // iPads
-    { id: "ipadpro", title: "iPad Pro M5", price: 999, description: "Тонкий. Мощный. OLED.", specs: ["Apple iPad Pro 13" (M5, 2025) Wi-Fi"], image: "https://static.re-store.ru/upload/resize_cache/iblock/0f9/100500_800_140cd750bba9870f18aada2478b24840a/6ta82kw42no8trmkawthmzj2h51wdy98.jpg" },
-    { id: "ipadair", title: "iPad Air M2", price: 599, description: "Мощь для творчества.", specs: ["Apple iPad Air (2025) M3 13" Wi-Fi ""], image: "https://static.re-store.ru/upload/resize_cache/iblock/455/100500_800_140cd750bba9870f18aada2478b24840a/yma5t6fq3oi0hy4bn3bfinqu6h4uz68h.jpg" },
-    { id: "ipadmini", title: "iPad mini 6", price: 499, description: "Мощь в твоем кармане.", specs: ["Apple iPad mini (2024) Wi-Fi""], image: "https://static.re-store.ru/upload/resize_cache/iblock/3df/100500_800_140cd750bba9870f18aada2478b24840a/tvnquvz76rkksg3p1qoek8al56gz1cmh.jpg" },
+            container.innerHTML = "";
 
-    // MacBooks
-    { id: "mbp14", title: "Apple MacBook Air 15" (M4, 10C CPU/10C GPU, 2025), 16 ГБ, 512 ГБ SSD\"", price: 1599, description: "Для профи.", specs: ["M4 Pro", "XDR Display"], image: "https://static.re-store.ru/upload/resize_cache/iblock/dae/100500_800_140cd750bba9870f18aada2478b24840a/1m9j178f3zz912j20u38sm1w8wymwhzm.jpg" },
-    { id: "m4air13", title: "Apple MacBook Air 13"\"", price: 1099, description: "Тонкий и мощный.", specs: ["Apple MacBook Air 13" (M4, 10C CPU/10C GPU, 2025), 24 ГБ, 512 ГБ SSD"], image: "https://static.re-store.ru/upload/resize_cache/iblock/657/100500_800_140cd750bba9870f18aada2478b24840a/hyol2m5nth7lfjecbosbnufl2cwd6v4u.jpg" },
-    { id: "mbp16", title: "Apple MacBook Pro 14"\"", price: 2499, description: "Максимум производительности.", specs: ["Apple MacBook Pro 14" (M5 10C CPU, 10C GPU, 2025) 24 ГБ, 1 ТБ SSD"], image: "https://static.re-store.ru/upload/resize_cache/iblock/a9e/100500_800_140cd750bba9870f18aada2478b24840a/ehkghuinyu3z0ib89z6j3x1cz2jguk08.jpg" }
-];
+            const categories = {
+                "iPhone": products.filter(p => p.title.toLowerCase().includes("iphone")),
+                "iPad": products.filter(p => p.title.toLowerCase().includes("ipad")),
+                "MacBook": products.filter(p => p.title.toLowerCase().includes("macbook"))
+            };
 
-const authMiddleware = (req, res, next) => {
-    const userId = req.headers["x-user-id"];
-    if (!userId) return res.status(401).json({ error: "NO_USER" });
-    if (!users[userId]) users[userId] = { balance: 0, orders: [], deposits: [] };
-    req.user = users[userId];
-    req.userId = userId;
-    next();
-};
+            for (const [categoryName, items] of Object.entries(categories)) {
+                if (items.length === 0) continue;
 
-app.get("/api/products", (req, res) => res.json(products));
-app.get("/api/balance", authMiddleware, (req, res) => res.json({ balance: req.user.balance }));
-app.get("/api/orders", authMiddleware, (req, res) => res.json(req.user.orders));
+                // Создаем заголовок категории
+                const title = document.createElement("h2");
+                title.className = "category-title reveal";
+                title.innerText = categoryName;
+                container.appendChild(title);
 
-app.post("/api/order", authMiddleware, (req, res) => {
-    const { productId, price, title } = req.body;
-    if (req.user.balance < price) return res.json({ success: false, error: "NO_BALANCE" });
-    req.user.balance -= price;
-    const order = { id: "ORD-" + Math.random().toString(36).substring(2, 9).toUpperCase(), title, price, date: new Date().toLocaleString(), status: "Оплачено" };
-    req.user.orders.unshift(order);
-    res.json({ success: true, order });
-});
+                items.forEach(p => {
+                    const card = document.createElement("div");
+                    card.className = "product reveal"; 
+                    card.innerHTML = `
+                        <div class="img-container">
+                            <img src="${p.image}" alt="${p.title}" loading="lazy" 
+                                 onerror="this.onerror=null;this.src='https://placehold.jp/24/0071e3/ffffff/300x300.png?text=Apple+Device';">
+                        </div>
+                        <div class="product-info">
+                            <h3>${p.title}</h3>
+                            <p>${p.description}</p>
+                            <ul class="specs-list">
+                                ${p.specs ? p.specs.map(s => `<li>${s}</li>`).join('') : ''}
+                            </ul>
+                            <div class="price">${p.price.toLocaleString()} USDT</div>
+                            <button class="buy-btn" data-id="${p.id}">Купить</button>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            }
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, "0.0.0.0", () => console.log(`Backend run on port ${PORT}`));
+            // Инициализация анимации появления (Intersection Observer)
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // Навешиваем клики на кнопки
+            document.querySelectorAll('.buy-btn').forEach(btn => {
+                btn.onclick = () => buy(btn.dataset.id, products);
+            });
+
+        } catch (err) {
+            console.error("Ошибка:", err);
+            container.innerHTML = `<p style="grid-column: 1/-1; text-align: center;">Ошибка загрузки сервера.</p>`;
+        }
+    }
+
+    async function buy(id, products) {
+        const product = products.find(p => p.id === id);
+        const btn = document.querySelector(`.buy-btn[data-id="${id}"]`);
+        
+        const originalText = btn.innerText;
+        btn.innerText = "Оформление...";
+        btn.disabled = true;
+
+        try {
+            const res = await createOrder(product);
+            if (res.success) {
+                alert("Заказ успешно создан!");
+                window.location.href = "cabinet.html";
+            } else {
+                if (confirm("Недостаточно средств. Перейти к пополнению?")) {
+                    window.location.href = "cabinet.html";
+                }
+            }
+        } catch (err) {
+            alert("Ошибка связи с сервером");
+        } finally {
+            btn.innerText = originalText;
+            btn.disabled = false;
+        }
+    }
+
+    loadProducts();
+</script>
+</body>
+</html>

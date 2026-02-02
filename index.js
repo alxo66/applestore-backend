@@ -1,69 +1,48 @@
 const express = require("express");
 const cors = require("cors");
-const products = require("./products");
-const payments = require("./payments");
-const orders = require("./orders");
+const path = require("path");
 
+// Инициализируем приложение ПЕРВЫМ
 const app = express();
 
 // Middlewares
 app.use(cors());
 app.use(express.json());
 
-// Логирование запросов
-app.use((req, res, next) => {
-    console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
-    next();
+// Импорт твоих модулей (проверь пути!)
+// Если файлы лежат прямо в корне (как на фото 1), оставляй так:
+const products = require("./products");
+const payments = require("./payments");
+const orders = require("./orders");
+
+// Простая проверка работоспособности (Health Check)
+app.get("/", (req, res) => res.send("AppleStore Backend is Online"));
+
+// Роуты
+app.get("/api/products", (req, res) => {
+    // Если products.list — это функция, вызываем её
+    if (products.list) return products.list(req, res);
+    res.json([{ id: 1, title: "Ошибка конфигурации", price: 0 }]);
 });
 
-// Хранилище пользователей в памяти
-const users = {}; 
-
-// Middleware для авторизации по x-user-id
-const authMiddleware = (req, res, next) => {
+// Middleware для авторизации
+app.use((req, res, next) => {
     const userId = req.headers["x-user-id"];
-    if (!userId) {
-        return res.status(401).json({ error: "NO_USER_ID_PROVIDED" });
+    if (!userId && req.path.startsWith("/api/")) {
+        // Разрешаем только публичные запросы без ID
+        if (req.path === "/api/products") return next();
+        return res.status(401).json({ error: "NO_USER" });
     }
-
-    if (!users[userId]) {
-        users[userId] = {
-            balance: 0,
-            deposits: [],
-            orders: []
-        };
-    }
-
-    req.user = users[userId];
     req.userId = userId;
     next();
-};
-
-// Публичные роуты
-app.get("/api/products", products.list);
-
-// Защищенные роуты
-app.use("/api", authMiddleware); // Применяем auth ко всем /api/ путям ниже
-
-app.post("/api/deposit", payments.deposit);
-app.get("/api/balance", payments.balance);
-app.get("/api/deposits", payments.deposits);
-
-app.post("/api/order", orders.create);
-app.get("/api/orders", orders.list);
-
-// Обработка несуществующих маршрутов
-app.use((req, res) => {
-    res.status(404).json({ error: "NOT_FOUND" });
 });
 
-// Глобальный обработчик ошибок
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({ error: "INTERNAL_SERVER_ERROR" });
-});
+// Остальные роуты
+app.post("/api/deposit", payments.deposit || ((req, res) => res.status(501).send()));
+app.post("/api/order", orders.create || ((req, res) => res.status(501).send()));
+app.get("/api/balance", payments.balance || ((req, res) => res.status(501).send()));
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`>>> Backend running on port ${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Backend running on port ${PORT}`);
 });

@@ -12,7 +12,7 @@ const products = [
         title: "Apple iPhone 17 Pro Max", 
         price: 1300, 
         description: "Будущее в титановом корпусе. Самый мощный чип A19 Pro.", 
-        specs: ["Экран 6.9\"", "A19 Pro", "5x Zoom"], 
+        specs: ["Экран 6.9\"", "A19 Pro"], 
         colors: ["#9ca2b0", "#ff6600", "#000138"],
         storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
         sim: ["eSIM", "SIM + eSIM"],
@@ -35,25 +35,23 @@ const products = [
     },
     { 
         id: "i17pro", 
-        title: "iPhone 17 Pro", 
+        title: "Apple iPhone 17 Pro", 
         price: 999, 
         description: "Профессиональная мощь в новом цвете.", 
-        specs: ["A19 Pro", "6.3\"", "120Hz ProMotion"], 
-        colors: ["#454d5b", "#e3e4e5", "#f7e8d0", "#2d2e32"],
-        storage: ["128 ГБ", "256 ГБ", "512 ГБ", "1 ТБ"],
+        specs: ["A19 Pro", "6.3\""], 
+        colors: ["#9ca2b0", "#ff6600", "#000138"],
+        storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
         sim: ["eSIM", "SIM + eSIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/425/100500_800_140cd750bba9870f18aada2478b24840a/63zba8vr1pr1qx83hjr8hq3qd76uj8of.jpg",
         images: {
-            "#454d5b": "https://static.re-store.ru/upload/resize_cache/iblock/425/100500_800_140cd750bba9870f18aada2478b24840a/63zba8vr1pr1qx83hjr8hq3qd76uj8of.jpg",
-            "#e3e4e5": "https://static.re-store.ru/upload/resize_cache/iblock/425/100500_800_140cd750bba9870f18aada2478b24840a/73vba8vr1pr1qx83hjr8hq3qd76uj8of.jpg",
-            "#f7e8d0": "https://static.re-store.ru/upload/resize_cache/iblock/425/100500_800_140cd750bba9870f18aada2478b24840a/83vba8vr1pr1qx83hjr8hq3qd76uj8of.jpg",
-            "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/425/100500_800_140cd750bba9870f18aada2478b24840a/93vba8vr1pr1qx83hjr8hq3qd76uj8of.jpg"
+            "#9ca2b0": "https://static.re-store.ru/upload/resize_cache/iblock/dc4/100500_800_140cd750bba9870f18aada2478b24840a/3tboc1aze44w24u1v2aawcfqbtj80nyr.jpg",
+            "#ff6600": "https://static.re-store.ru/upload/resize_cache/iblock/425/100500_800_140cd750bba9870f18aada2478b24840a/63zba8vr1pr1qx83hjr8hq3qd76uj8of.jpg",
+            "#000138": "https://static.re-store.ru/upload/resize_cache/iblock/e54/100500_800_140cd750bba9870f18aada2478b24840a/idywry6hey7xlu9ms9u53a1qalz11uid.jpg",
         },
         storagePrices: {
-            "128 ГБ": 999,
-            "256 ГБ": 1099,
-            "512 ГБ": 1299,
-            "1 ТБ": 1499
+            "256 ГБ": 1199,
+            "512 ГБ": 1399,
+            "1 ТБ": 1599
         },
         simPrices: {
             "eSIM": 0,
@@ -63,22 +61,22 @@ const products = [
     },
     { 
         id: "i17", 
-        title: "iPhone 17", 
+        title: "Apple iPhone 17", 
         price: 799, 
         description: "Тонкий, легкий, невероятный.", 
-        specs: ["A19 Bionic", "6.1\"", "48Mp Main Camera"], 
-        colors: ["#31353a", "#f2f3ee", "#e5dbea", "#d0e3ed"],
+        specs: ["A19 Bionic", "6.3\""], 
+        colors: ["#efeff5", "#6a95ec", "#67c595", "#141414", "#9287e8"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
         sim: ["eSIM", "SIM + eSIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/2f7/100500_800_140cd750bba9870f18aada2478b24840a/d3tf4gy4fvsh1uacmwk9cvfx576r6hfp.jpg",
         images: {
-            "#31353a": "https://static.re-store.ru/upload/resize_cache/iblock/2f7/100500_800_140cd750bba9870f18aada2478b24840a/d3tf4gy4fvsh1uacmwk9cvfx576r6hfp.jpg",
-            "#f2f3ee": "https://static.re-store.ru/upload/resize_cache/iblock/2f7/100500_800_140cd750bba9870f18aada2478b24840a/e3tf4gy4fvsh1uacmwk9cvfx576r6hfp.jpg",
-            "#e5dbea": "https://static.re-store.ru/upload/resize_cache/iblock/2f7/100500_800_140cd750bba9870f18aada2478b24840a/f3tf4gy4fvsh1uacmwk9cvfx576r6hfp.jpg",
-            "#d0e3ed": "https://static.re-store.ru/upload/resize_cache/iblock/2f7/100500_800_140cd750bba9870f18aada2478b24840a/g3tf4gy4fvsh1uacmwk9cvfx576r6hfp.jpg"
+            "#efeff5": "https://static.re-store.ru/upload/resize_cache/iblock/5ea/100500_800_140cd750bba9870f18aada2478b24840a/0mef8vqb1fwneyvkybz1nf0xdwvd388i.jpg",
+            "#6a95ec": "https://static.re-store.ru/upload/resize_cache/iblock/79f/100500_800_140cd750bba9870f18aada2478b24840a/e5kei4evzrg2q6sw19zjmkdu8ekr836k.jpg",
+            "#67c595": "https://static.re-store.ru/upload/resize_cache/iblock/449/100500_800_140cd750bba9870f18aada2478b24840a/3ez42diuwvu09uxte2zkm7g251mhywxx.jpg",
+            "#141414": "https://static.re-store.ru/upload/resize_cache/iblock/2f7/100500_800_140cd750bba9870f18aada2478b24840a/d3tf4gy4fvsh1uacmwk9cvfx576r6hfp.jpg",
+            "#9287e8": "https://static.re-store.ru/upload/resize_cache/iblock/fbe/100500_800_140cd750bba9870f18aada2478b24840a/xiypmqi1pm3adi8nvzotf9sht7q8iige.jpg"
         },
         storagePrices: {
-            "128 ГБ": 799,
             "256 ГБ": 899,
             "512 ГБ": 1099
         },

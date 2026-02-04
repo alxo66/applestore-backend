@@ -15,7 +15,7 @@ const products = [
         specs: ["Экран 6.9\"", "A19 Pro", "5x Zoom"], 
         colors: ["#9ca2b0", "#ff6600", "#000138"],
         storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
-        sim: ["eSIM", "SIM + eSIM", "Dual SIM"],
+        sim: ["eSIM", "SIM + eSIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/3e7/100500_800_140cd750bba9870f18aada2478b24840a/c6b0ndzv7rqf8u9c456xwvgolvkkdf11.jpg",
         images: {
             "#9ca2b0": "https://static.re-store.ru/upload/resize_cache/iblock/06a/100500_800_140cd750bba9870f18aada2478b24840a/rtj0gu24fye1uesfrlwqxtvctm90v8al.jpg",
@@ -41,7 +41,7 @@ const products = [
         specs: ["A19 Pro", "6.3\"", "120Hz ProMotion"], 
         colors: ["#454d5b", "#e3e4e5", "#f7e8d0", "#2d2e32"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ", "1 ТБ"],
-        sim: ["eSIM", "SIM + eSIM", "Dual SIM"],
+        sim: ["eSIM", "SIM + eSIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/425/100500_800_140cd750bba9870f18aada2478b24840a/63zba8vr1pr1qx83hjr8hq3qd76uj8of.jpg",
         images: {
             "#454d5b": "https://static.re-store.ru/upload/resize_cache/iblock/425/100500_800_140cd750bba9870f18aada2478b24840a/63zba8vr1pr1qx83hjr8hq3qd76uj8of.jpg",
@@ -97,7 +97,7 @@ const products = [
         specs: ["A18 Pro", "Титановый корпус", "Camera Control"], 
         colors: ["#454545", "#f5f5f0", "#d1c7b7", "#3b3c3e"],
         storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
-        sim: ["eSIM", "SIM + eSIM", "Dual SIM"],
+        sim: ["eSIM", "SIM + eSIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/e7a/100500_800_140cd750bba9870f18aada2478b24840a/3fkzizh2j3ecnj83n008g53uk15biuup.jpg",
         images: {
             "#454545": "https://static.re-store.ru/upload/resize_cache/iblock/e7a/100500_800_140cd750bba9870f18aada2478b24840a/3fkzizh2j3ecnj83n008g53uk15biuup.jpg",
@@ -120,7 +120,7 @@ const products = [
         specs: ["A18 Pro", "4K 120fps Dolby Vision"], 
         colors: ["#454545", "#f5f5f0", "#d1c7b7", "#3b3c3e"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ", "1 ТБ"],
-        sim: ["eSIM", "SIM + eSIM", "Dual SIM"],
+        sim: ["eSIM", "SIM + eSIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/ca9/100500_800_140cd750bba9870f18aada2478b24840a/1um5lfka1r127hpc1c6y2r73q4x2l339.jpg",
         images: {
             "#454545": "https://static.re-store.ru/upload/resize_cache/iblock/ca9/100500_800_140cd750bba9870f18aada2478b24840a/1um5lfka1r127hpc1c6y2r73q4x2l339.jpg",
@@ -166,7 +166,7 @@ const products = [
         specs: ["A17 Pro", "USB-C 3.0", "Titanium"], 
         colors: ["#454d5b", "#e3e4e5", "#f7e8d0", "#2d2e32"],
         storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
-        sim: ["eSIM", "SIM + eSIM", "Dual SIM"],
+        sim: ["eSIM", "SIM + eSIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/dc0/100500_800_140cd750bba9870f18aada2478b24840a/81ysro3zyue28kqvn357mugae05nsgvl.jpg",
         images: {
             "#454d5b": "https://static.re-store.ru/upload/resize_cache/iblock/dc0/100500_800_140cd750bba9870f18aada2478b24840a/81ysro3zyue28kqvn357mugae05nsgvl.jpg",

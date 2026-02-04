@@ -13,7 +13,7 @@ const products = [
         price: 1300, 
         description: "Будущее в титановом корпусе. Самый мощный чип A19 Pro.", 
         specs: ["Экран 6.9\"", "A19 Pro", "5x Zoom"], 
-        colors: ["#454d5b", "#e3e4e5", "#f7e8d0", "#2d2e32"],
+        colors: ["#9ca2b0", "#ff6600", "#000138"],
         storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
         sim: ["eSIM", "SIM + eSIM", "Dual SIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/3e7/100500_800_140cd750bba9870f18aada2478b24840a/c6b0ndzv7rqf8u9c456xwvgolvkkdf11.jpg",

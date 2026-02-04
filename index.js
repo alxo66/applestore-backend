@@ -11,7 +11,7 @@ const products = [
         id: "i17promax", 
         title: "iPhone 17 Pro Max", 
         price: 1199, 
-        description: "Будущее в титановом корпусе.", 
+        description: "Будущее в титановом корпусе. Самый мощный чип A19 Pro.", 
         specs: ["Экран 6.9\"", "A19 Pro", "5x Zoom"], 
         colors: ["#454d5b", "#e3e4e5", "#f7e8d0", "#2d2e32"],
         storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
@@ -38,8 +38,8 @@ const products = [
         id: "i17pro", 
         title: "iPhone 17 Pro", 
         price: 999, 
-        description: "Профессиональная мощь.", 
-        specs: ["A19 Pro", "6.3\"", "120Hz"], 
+        description: "Профессиональная мощь в новом цвете.", 
+        specs: ["A19 Pro", "6.3\"", "120Hz ProMotion"], 
         colors: ["#454d5b", "#e3e4e5", "#f7e8d0", "#2d2e32"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ", "1 ТБ"],
         sim: ["eSIM", "SIM + eSIM", "Dual SIM"],
@@ -66,8 +66,8 @@ const products = [
         id: "i17", 
         title: "iPhone 17", 
         price: 799, 
-        description: "Новый стандарт.", 
-        specs: ["A19 Bionic", "6.1\"", "48Mp"], 
+        description: "Тонкий, легкий, невероятный.", 
+        specs: ["A19 Bionic", "6.1\"", "48Mp Main Camera"], 
         colors: ["#31353a", "#f2f3ee", "#e5dbea", "#d0e3ed"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
         sim: ["eSIM", "SIM + eSIM"],
@@ -83,7 +83,10 @@ const products = [
             "256 ГБ": 899,
             "512 ГБ": 1099
         },
-        simPrices: { "eSIM": 0, "SIM + eSIM": 30 }
+        simPrices: {
+            "eSIM": 0,
+            "SIM + eSIM": 30
+        }
     },
 
     // --- iPHONE 16 SERIES ---
@@ -91,7 +94,7 @@ const products = [
         id: "i16promax", 
         title: "iPhone 16 Pro Max", 
         price: 1099, 
-        description: "Apple Intelligence.", 
+        description: "Apple Intelligence и титан.", 
         specs: ["A18 Pro", "Титановый корпус", "Camera Control"], 
         colors: ["#454545", "#f5f5f0", "#d1c7b7", "#3b3c3e"],
         storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
@@ -115,7 +118,7 @@ const products = [
         title: "iPhone 16 Pro", 
         price: 999, 
         description: "Мощь в компактном размере.", 
-        specs: ["A18 Pro", "4K 120fps"], 
+        specs: ["A18 Pro", "4K 120fps Dolby Vision"], 
         colors: ["#454545", "#f5f5f0", "#d1c7b7", "#3b3c3e"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ", "1 ТБ"],
         sim: ["eSIM", "SIM + eSIM", "Dual SIM"],
@@ -138,8 +141,8 @@ const products = [
         id: "i16", 
         title: "iPhone 16", 
         price: 799, 
-        description: "Новая эра Apple.", 
-        specs: ["A18 Chip", "Action Button"], 
+        description: "Яркий и производительный.", 
+        specs: ["A18 Chip", "Action Button", "USB-C"], 
         colors: ["#2d2e32", "#f9f9f9", "#7db6d0", "#d89ec5", "#a9bfa1"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
         sim: ["eSIM", "SIM + eSIM"],
@@ -154,34 +157,14 @@ const products = [
         storagePrices: { "128 ГБ": 799, "256 ГБ": 899, "512 ГБ": 1099 },
         simPrices: { "eSIM": 0, "SIM + eSIM": 30 }
     },
-    { 
-        id: "i16plus", 
-        title: "iPhone 16 Plus", 
-        price: 899, 
-        description: "Большой экран, большая батарея.", 
-        specs: ["A18", "6.7\""], 
-        colors: ["#2d2e32", "#f9f9f9", "#7db6d0", "#d89ec5", "#a9bfa1"],
-        storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
-        sim: ["eSIM", "SIM + eSIM"],
-        image: "https://static.re-store.ru/upload/resize_cache/iblock/e54/100500_800_140cd750bba9870f18aada2478b24840a/2ejqmg2ifqb3bmoya38k9u3owbqygrz1.jpg",
-        images: {
-            "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/e54/100500_800_140cd750bba9870f18aada2478b24840a/2ejqmg2ifqb3bmoya38k9u3owbqygrz1.jpg",
-            "#f9f9f9": "https://static.re-store.ru/upload/resize_cache/iblock/e54/100500_800_140cd750bba9870f18aada2478b24840a/1ejqmg2ifqb3bmoya38k9u3owbqygrz1.jpg",
-            "#7db6d0": "https://static.re-store.ru/upload/resize_cache/iblock/e54/100500_800_140cd750bba9870f18aada2478b24840a/3ejqmg2ifqb3bmoya38k9u3owbqygrz1.jpg",
-            "#d89ec5": "https://static.re-store.ru/upload/resize_cache/iblock/e54/100500_800_140cd750bba9870f18aada2478b24840a/4ejqmg2ifqb3bmoya38k9u3owbqygrz1.jpg",
-            "#a9bfa1": "https://static.re-store.ru/upload/resize_cache/iblock/e54/100500_800_140cd750bba9870f18aada2478b24840a/5ejqmg2ifqb3bmoya38k9u3owbqygrz1.jpg"
-        },
-        storagePrices: { "128 ГБ": 899, "256 ГБ": 999, "512 ГБ": 1199 },
-        simPrices: { "eSIM": 0, "SIM + eSIM": 30 }
-    },
 
     // --- iPHONE 15 SERIES ---
     { 
         id: "i15promax", 
         title: "iPhone 15 Pro Max", 
         price: 899, 
-        description: "Первый титановый iPhone.", 
-        specs: ["A17 Pro", "USB-C"], 
+        description: "Первый титановый iPhone с 5х зумом.", 
+        specs: ["A17 Pro", "USB-C 3.0", "Titanium"], 
         colors: ["#454d5b", "#e3e4e5", "#f7e8d0", "#2d2e32"],
         storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
         sim: ["eSIM", "SIM + eSIM", "Dual SIM"],
@@ -197,10 +180,10 @@ const products = [
     },
     { 
         id: "i15", 
-        title: "Apple iPhone 15 Plus", 
+        title: "iPhone 15 Plus", 
         price: 599, 
-        description: "Dynamic Island для всех.", 
-        specs: ["USB-C", "48Mp"], 
+        description: "Dynamic Island теперь для всех.", 
+        specs: ["USB-C", "48Mp Camera", "A16 Bionic"], 
         colors: ["#3c3d3a", "#e1e4e1", "#d4e4f2", "#f2e4ad", "#e6d7d9"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
         sim: ["eSIM", "SIM + eSIM"],
@@ -219,10 +202,10 @@ const products = [
     // --- iPADS ---
     { 
         id: "ipadpro", 
-        title: "Apple iPad Pro 13 (2025)", 
-        price: 999, 
-        description: "Тонкий. Мощный. OLED.", 
-        specs: ["M5, Wi-Fi"], 
+        title: "iPad Pro 13 (2025)", 
+        price: 1299, 
+        description: "Тонкий. Мощный. OLED-дисплей нового поколения.", 
+        specs: ["M5 Chip", "Ultra Retina OLED", "Wi-Fi"], 
         colors: ["#2d2e32", "#e3e4e5"],
         storage: ["256 ГБ", "512 ГБ", "1 ТБ", "2 ТБ"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/c31/100500_800_140cd750bba9870f18aada2478b24840a/3a89519konnv8x0gnp2cry8q8mnd6a88.jpg",
@@ -230,24 +213,107 @@ const products = [
             "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/c31/100500_800_140cd750bba9870f18aada2478b24840a/3a89519konnv8x0gnp2cry8q8mnd6a88.jpg",
             "#e3e4e5": "https://static.re-store.ru/upload/resize_cache/iblock/c31/100500_800_140cd750bba9870f18aada2478b24840a/4a89519konnv8x0gnp2cry8q8mnd6a88.jpg"
         },
-        storagePrices: { "256 ГБ": 999, "512 ГБ": 1199, "1 ТБ": 1599, "2 ТБ": 1999 }
+        storagePrices: {
+            "256 ГБ": 1299,
+            "512 ГБ": 1499,
+            "1 ТБ": 1899,
+            "2 ТБ": 2299
+        }
+    },
+    { 
+        id: "ipadair", 
+        title: "iPad Air 13", 
+        price: 799, 
+        description: "Больше экрана. Больше возможностей.", 
+        specs: ["M2 Chip", "Liquid Retina", "Touch ID"], 
+        colors: ["#3b3c3e", "#e3e4e5", "#d1c7b7", "#7db6d0"],
+        storage: ["128 ГБ", "256 ГБ", "512 ГБ", "1 ТБ"],
+        image: "https://static.re-store.ru/upload/resize_cache/iblock/179/100500_800_140cd750bba9870f18aada2478b24840a/7ayp8sh0n758j8875znd1e6w6c4p2h6n.jpg",
+        images: {
+            "#3b3c3e": "https://static.re-store.ru/upload/resize_cache/iblock/179/100500_800_140cd750bba9870f18aada2478b24840a/7ayp8sh0n758j8875znd1e6w6c4p2h6n.jpg",
+            "#e3e4e5": "https://static.re-store.ru/upload/resize_cache/iblock/179/100500_800_140cd750bba9870f18aada2478b24840a/8ayp8sh0n758j8875znd1e6w6c4p2h6n.jpg"
+        },
+        storagePrices: {
+            "128 ГБ": 799,
+            "256 ГБ": 899,
+            "512 ГБ": 1099,
+            "1 ТБ": 1299
+        }
+    },
+    { 
+        id: "ipadmini", 
+        title: "iPad mini", 
+        price: 499, 
+        description: "Огромная мощь в миниатюрном корпусе.", 
+        specs: ["A17 Pro", "8.3\"", "Apple Pencil Pro Support"], 
+        colors: ["#3b3c3e", "#e3e4e5", "#d89ec5", "#a9bfa1"],
+        storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
+        image: "https://static.re-store.ru/upload/resize_cache/iblock/9da/100500_800_140cd750bba9870f18aada2478b24840a/y1h9l42nry1v93765znd1e6w6c4p2h6n.jpg",
+        images: {
+            "#3b3c3e": "https://static.re-store.ru/upload/resize_cache/iblock/9da/100500_800_140cd750bba9870f18aada2478b24840a/y1h9l42nry1v93765znd1e6w6c4p2h6n.jpg"
+        },
+        storagePrices: {
+            "128 ГБ": 499,
+            "256 ГБ": 599,
+            "512 ГБ": 799
+        }
     },
 
     // --- MacBOOKS ---
     { 
         id: "mbp14", 
-        title: "Apple MacBook Pro 14\"", 
+        title: "MacBook Pro 14\"", 
         price: 1599, 
-        description: "Для профи.", 
-        specs: ["M4, 10C CPU/10C GPU"], 
-        colors: ["#2d2e32", "#e3e4e5", "#f7e8d0", "#bfc0c2"],
+        description: "Профессиональный инструмент на чипе M4.", 
+        specs: ["M4 Chip", "10-core CPU", "16GB Unified RAM"], 
+        colors: ["#2d2e32", "#bfc0c2"],
         storage: ["512 ГБ", "1 ТБ", "2 ТБ"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg",
         images: {
             "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg",
             "#bfc0c2": "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/ayc9xmj0wiafd5itij7qw8k11vqf1e92.jpg"
         },
-        storagePrices: { "512 ГБ": 1599, "1 ТБ": 1799, "2 ТБ": 2199 }
+        storagePrices: {
+            "512 ГБ": 1599,
+            "1 ТБ": 1799,
+            "2 ТБ": 2199
+        }
+    },
+    { 
+        id: "mbp16", 
+        title: "MacBook Pro 16\"", 
+        price: 2499, 
+        description: "Максимум экрана и производительности.", 
+        specs: ["M4 Max", "Liquid Retina XDR", "96W Charge"], 
+        colors: ["#2d2e32", "#bfc0c2"],
+        storage: ["1 ТБ", "2 ТБ", "4 ТБ"],
+        image: "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg",
+        images: {
+            "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg"
+        },
+        storagePrices: {
+            "1 ТБ": 2499,
+            "2 ТБ": 2899,
+            "4 ТБ": 3699
+        }
+    },
+    { 
+        id: "mbair", 
+        title: "MacBook Air 13 (M3)", 
+        price: 1099, 
+        description: "Тонкий, легкий, бесшумный.", 
+        specs: ["M3 Chip", "18 часов работы", "Liquid Retina"], 
+        colors: ["#2d2e32", "#e3e4e5", "#d1c7b7", "#3b3c3e"],
+        storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
+        image: "https://static.re-store.ru/upload/resize_cache/iblock/785/100500_800_140cd750bba9870f18aada2478b24840a/6vdy9sh0n758j8875znd1e6w6c4p2h6n.jpg",
+        images: {
+            "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/785/100500_800_140cd750bba9870f18aada2478b24840a/6vdy9sh0n758j8875znd1e6w6c4p2h6n.jpg"
+        },
+        storagePrices: {
+            "256 ГБ": 1099,
+            "512 ГБ": 1299,
+            "1 ТБ": 1499
+        }
     }
 ];
 
@@ -256,12 +322,10 @@ app.get('/api/products', (req, res) => {
 });
 
 app.post('/api/order', (req, res) => {
-    const { productId, selectedColor, selectedStorage, selectedSim, price } = req.body;
+    const { productId, selectedOptions, price } = req.body;
     console.log(`--- НОВЫЙ ЗАКАЗ ---`);
     console.log(`Товар: ${productId}`);
-    console.log(`Цвет: ${selectedColor}`);
-    console.log(`Память: ${selectedStorage}`);
-    console.log(`SIM: ${selectedSim || 'N/A'}`);
+    console.log(`Опции:`, selectedOptions);
     console.log(`Цена: ${price} USDT`);
     console.log(`-------------------`);
     res.json({ success: true, message: "Заказ оформлен" });

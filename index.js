@@ -9,8 +9,8 @@ const products = [
     // --- iPHONE 17 SERIES ---
     { 
         id: "i17promax", 
-        title: "iPhone 17 Pro Max", 
-        price: 1199, 
+        title: "Apple iPhone 17 Pro Max", 
+        price: 1300, 
         description: "Будущее в титановом корпусе. Самый мощный чип A19 Pro.", 
         specs: ["Экран 6.9\"", "A19 Pro", "5x Zoom"], 
         colors: ["#454d5b", "#e3e4e5", "#f7e8d0", "#2d2e32"],
@@ -18,20 +18,19 @@ const products = [
         sim: ["eSIM", "SIM + eSIM", "Dual SIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/3e7/100500_800_140cd750bba9870f18aada2478b24840a/c6b0ndzv7rqf8u9c456xwvgolvkkdf11.jpg",
         images: {
-            "#454d5b": "https://static.re-store.ru/upload/resize_cache/iblock/3e7/100500_800_140cd750bba9870f18aada2478b24840a/c6b0ndzv7rqf8u9c456xwvgolvkkdf11.jpg",
-            "#e3e4e5": "https://static.re-store.ru/upload/resize_cache/iblock/3e7/100500_800_140cd750bba9870f18aada2478b24840a/801v2s73b5qclisg1f9b37v4983x46j1.jpg",
-            "#f7e8d0": "https://static.re-store.ru/upload/resize_cache/iblock/3e7/100500_800_140cd750bba9870f18aada2478b24840a/39oiaf4kpg60b9432f8y1v2l6m7u3f9z.jpg",
-            "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/3e7/100500_800_140cd750bba9870f18aada2478b24840a/73a987654321fedcba0987654321fedc.jpg"
+            "#9ca2b0": "https://static.re-store.ru/upload/resize_cache/iblock/06a/100500_800_140cd750bba9870f18aada2478b24840a/rtj0gu24fye1uesfrlwqxtvctm90v8al.jpg",
+            "#ff6600": "https://static.re-store.ru/upload/resize_cache/iblock/648/100500_800_140cd750bba9870f18aada2478b24840a/ua63t9h5n5nuasie0sdg772qr4y5xdez.jpg",
+            "#000138": "https://static.re-store.ru/upload/resize_cache/iblock/6eb/100500_800_140cd750bba9870f18aada2478b24840a/6lc528gxbxh4duxcc0l9al1ih6vfv58m.jpg"
         },
         storagePrices: {
-            "256 ГБ": 1199,
-            "512 ГБ": 1399,
-            "1 ТБ": 1599
+            "256 ГБ": 1299,
+            "512 ГБ": 1899,
+            "1 ТБ": 2399
         },
         simPrices: {
             "eSIM": 0,
-            "SIM + eSIM": 50,
-            "Dual SIM": 100
+            "SIM + eSIM": 49,
+            "Dual SIM": 99
         }
     },
     { 

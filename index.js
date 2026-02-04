@@ -89,69 +89,69 @@ const products = [
     // --- iPHONE 16 SERIES ---
     { 
         id: "i16promax", 
-        title: "iPhone 16 Pro Max", 
+        title: "Apple iPhone 16 Pro Max", 
         price: 1099, 
         description: "Apple Intelligence и титан.", 
-        specs: ["A18 Pro", "Титановый корпус", "Camera Control"], 
-        colors: ["#454545", "#f5f5f0", "#d1c7b7", "#3b3c3e"],
+        specs: ["A18 Pro", "6.9\""], 
+        colors: ["#141414", "#efeff5", "#9ca2b0", "#d5af6c"],
         storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
         sim: ["eSIM", "SIM + eSIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/e7a/100500_800_140cd750bba9870f18aada2478b24840a/3fkzizh2j3ecnj83n008g53uk15biuup.jpg",
         images: {
-            "#454545": "https://static.re-store.ru/upload/resize_cache/iblock/e7a/100500_800_140cd750bba9870f18aada2478b24840a/3fkzizh2j3ecnj83n008g53uk15biuup.jpg",
-            "#f5f5f0": "https://static.re-store.ru/upload/resize_cache/iblock/e7a/100500_800_140cd750bba9870f18aada2478b24840a/1fkzizh2j3ecnj83n008g53uk15biuup.jpg",
-            "#d1c7b7": "https://static.re-store.ru/upload/resize_cache/iblock/e7a/100500_800_140cd750bba9870f18aada2478b24840a/2fkzizh2j3ecnj83n008g53uk15biuup.jpg",
-            "#3b3c3e": "https://static.re-store.ru/upload/resize_cache/iblock/e7a/100500_800_140cd750bba9870f18aada2478b24840a/4fkzizh2j3ecnj83n008g53uk15biuup.jpg"
+            "#141414": "https://static.re-store.ru/upload/resize_cache/iblock/e7a/100500_800_140cd750bba9870f18aada2478b24840a/3fkzizh2j3ecnj83n008g53uk15biuup.jpg",
+            "#efeff5": "https://static.re-store.ru/upload/resize_cache/iblock/b71/100500_800_140cd750bba9870f18aada2478b24840a/vk10qsjc12kkihlu83w6vmhceot7okpv.jpg",
+            "#9ca2b0": "https://static.re-store.ru/upload/resize_cache/iblock/a46/100500_800_140cd750bba9870f18aada2478b24840a/l3yvlidarp4nq24fg2qe86lv6wkakjsb.jpg",
+            "#d5af6c": "https://static.re-store.ru/upload/resize_cache/iblock/0bc/100500_800_140cd750bba9870f18aada2478b24840a/0eybzk3ijxb0dr3ox8gxbss0e1s4jmae.jpg"
         },
         storagePrices: {
-            "256 ГБ": 1099,
-            "512 ГБ": 1299,
-            "1 ТБ": 1499
+            "256 ГБ": 999,
+            "512 ГБ": 1199,
+            "1 ТБ": 1399
         },
         simPrices: { "eSIM": 0, "SIM + eSIM": 40, "Dual SIM": 80 }
     },
     { 
         id: "i16pro", 
-        title: "iPhone 16 Pro", 
+        title: "Apple iPhone 16 Pro", 
         price: 999, 
         description: "Мощь в компактном размере.", 
-        specs: ["A18 Pro", "4K 120fps Dolby Vision"], 
-        colors: ["#454545", "#f5f5f0", "#d1c7b7", "#3b3c3e"],
+        specs: ["A18 Pro", "6.3\""], 
+        colors: ["#141414", "#efeff5", "#9ca2b0", "#d5af6c"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ", "1 ТБ"],
         sim: ["eSIM", "SIM + eSIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/ca9/100500_800_140cd750bba9870f18aada2478b24840a/1um5lfka1r127hpc1c6y2r73q4x2l339.jpg",
         images: {
-            "#454545": "https://static.re-store.ru/upload/resize_cache/iblock/ca9/100500_800_140cd750bba9870f18aada2478b24840a/1um5lfka1r127hpc1c6y2r73q4x2l339.jpg",
-            "#f5f5f0": "https://static.re-store.ru/upload/resize_cache/iblock/ca9/100500_800_140cd750bba9870f18aada2478b24840a/2um5lfka1r127hpc1c6y2r73q4x2l339.jpg",
-            "#d1c7b7": "https://static.re-store.ru/upload/resize_cache/iblock/ca9/100500_800_140cd750bba9870f18aada2478b24840a/3um5lfka1r127hpc1c6y2r73q4x2l339.jpg",
-            "#3b3c3e": "https://static.re-store.ru/upload/resize_cache/iblock/ca9/100500_800_140cd750bba9870f18aada2478b24840a/4um5lfka1r127hpc1c6y2r73q4x2l339.jpg"
+            "#141414": "https://static.re-store.ru/upload/resize_cache/iblock/ca9/100500_800_140cd750bba9870f18aada2478b24840a/1um5lfka1r127hpc1c6y2r73q4x2l339.jpg",
+            "#efeff5": "https://static.re-store.ru/upload/resize_cache/iblock/b40/100500_800_140cd750bba9870f18aada2478b24840a/kmr65n37eshklj1s8ptoarw9399wonau.jpg",
+            "#9ca2b0": "https://static.re-store.ru/upload/resize_cache/iblock/01f/100500_800_140cd750bba9870f18aada2478b24840a/bprnyy120p5zof1uybl4yws5uo2qma34.jpg",
+            "#d5af6c": "https://static.re-store.ru/upload/resize_cache/iblock/1f5/100500_800_140cd750bba9870f18aada2478b24840a/ymntx2qy15nj7x154c10qntwsbghifhb.jpg"
         },
         storagePrices: {
-            "128 ГБ": 999,
-            "256 ГБ": 1099,
-            "512 ГБ": 1299,
-            "1 ТБ": 1499
+            "128 ГБ": 899,
+            "256 ГБ": 999,
+            "512 ГБ": 1199,
+            "1 ТБ": 1599
         },
         simPrices: { "eSIM": 0, "SIM + eSIM": 30, "Dual SIM": 70 }
     },
     { 
         id: "i16", 
-        title: "iPhone 16", 
+        title: "Apple iPhone 16", 
         price: 799, 
         description: "Яркий и производительный.", 
-        specs: ["A18 Chip", "Action Button", "USB-C"], 
-        colors: ["#2d2e32", "#f9f9f9", "#7db6d0", "#d89ec5", "#a9bfa1"],
+        specs: ["A18 Chip", "6.3\""], 
+        colors: ["#efeff5", "#6a95ec", "#67c595", "#141414", "#e40bf4"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
         sim: ["eSIM", "SIM + eSIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/938/100500_800_140cd750bba9870f18aada2478b24840a/0nezbz8sc7xr6vzyjmw7tjzx9al17n95.jpg",
         images: {
-            "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/938/100500_800_140cd750bba9870f18aada2478b24840a/0nezbz8sc7xr6vzyjmw7tjzx9al17n95.jpg",
-            "#f9f9f9": "https://static.re-store.ru/upload/resize_cache/iblock/938/100500_800_140cd750bba9870f18aada2478b24840a/1nezbz8sc7xr6vzyjmw7tjzx9al17n95.jpg",
-            "#7db6d0": "https://static.re-store.ru/upload/resize_cache/iblock/938/100500_800_140cd750bba9870f18aada2478b24840a/2nezbz8sc7xr6vzyjmw7tjzx9al17n95.jpg",
-            "#d89ec5": "https://static.re-store.ru/upload/resize_cache/iblock/938/100500_800_140cd750bba9870f18aada2478b24840a/3nezbz8sc7xr6vzyjmw7tjzx9al17n95.jpg",
-            "#a9bfa1": "https://static.re-store.ru/upload/resize_cache/iblock/938/100500_800_140cd750bba9870f18aada2478b24840a/4nezbz8sc7xr6vzyjmw7tjzx9al17n95.jpg"
+            "#efeff5": "https://static.re-store.ru/upload/resize_cache/iblock/240/100500_800_140cd750bba9870f18aada2478b24840a/0j9ufhxiqq1pjv9hhkqelsnhx1jkksrs.jpg",
+            "#6a95ec": "https://static.re-store.ru/upload/resize_cache/iblock/1b4/100500_800_140cd750bba9870f18aada2478b24840a/lpc9988ub3v7o223tywklsuql80j3rwf.jpg",
+            "#67c595": "https://static.re-store.ru/upload/resize_cache/iblock/1be/100500_800_140cd750bba9870f18aada2478b24840a/r2bbblm6qjyvndaqdwud0kltfobvrt77.jpg",
+            "#141414": "https://static.re-store.ru/upload/resize_cache/iblock/938/100500_800_140cd750bba9870f18aada2478b24840a/0nezbz8sc7xr6vzyjmw7tjzx9al17n95.jpg",
+            "#e40bf4": "https://static.re-store.ru/upload/resize_cache/iblock/651/100500_800_140cd750bba9870f18aada2478b24840a/yx1cu4by682ipt0if9irxfkhascp5y5t.jpg"
         },
-        storagePrices: { "128 ГБ": 799, "256 ГБ": 899, "512 ГБ": 1099 },
+        storagePrices: { "128 ГБ": 599, "256 ГБ": 699, "512 ГБ": 899 },
         simPrices: { "eSIM": 0, "SIM + eSIM": 30 }
     },
 

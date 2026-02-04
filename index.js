@@ -6,7 +6,7 @@ app.use(cors());
 app.use(express.json());
 
 const products = [
-    // iPhone 17 Series
+    // --- iPHONE 17 SERIES ---
     { 
         id: "i17promax", 
         title: "iPhone 17 Pro Max", 
@@ -15,6 +15,7 @@ const products = [
         specs: ["Экран 6.9\"", "A19 Pro", "5x Zoom"], 
         colors: ["#454d5b", "#e3e4e5", "#f7e8d0", "#2d2e32"],
         storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
+        sim: ["eSIM", "SIM + eSIM", "Dual SIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/3e7/100500_800_140cd750bba9870f18aada2478b24840a/c6b0ndzv7rqf8u9c456xwvgolvkkdf11.jpg",
         images: {
             "#454d5b": "https://static.re-store.ru/upload/resize_cache/iblock/3e7/100500_800_140cd750bba9870f18aada2478b24840a/c6b0ndzv7rqf8u9c456xwvgolvkkdf11.jpg",
@@ -26,6 +27,11 @@ const products = [
             "256 ГБ": 1199,
             "512 ГБ": 1399,
             "1 ТБ": 1599
+        },
+        simPrices: {
+            "eSIM": 0,
+            "SIM + eSIM": 50,
+            "Dual SIM": 100
         }
     },
     { 
@@ -36,6 +42,7 @@ const products = [
         specs: ["A19 Pro", "6.3\"", "120Hz"], 
         colors: ["#454d5b", "#e3e4e5", "#f7e8d0", "#2d2e32"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ", "1 ТБ"],
+        sim: ["eSIM", "SIM + eSIM", "Dual SIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/425/100500_800_140cd750bba9870f18aada2478b24840a/63zba8vr1pr1qx83hjr8hq3qd76uj8of.jpg",
         images: {
             "#454d5b": "https://static.re-store.ru/upload/resize_cache/iblock/425/100500_800_140cd750bba9870f18aada2478b24840a/63zba8vr1pr1qx83hjr8hq3qd76uj8of.jpg",
@@ -48,6 +55,11 @@ const products = [
             "256 ГБ": 1099,
             "512 ГБ": 1299,
             "1 ТБ": 1499
+        },
+        simPrices: {
+            "eSIM": 0,
+            "SIM + eSIM": 40,
+            "Dual SIM": 90
         }
     },
     { 
@@ -58,6 +70,7 @@ const products = [
         specs: ["A19 Bionic", "6.1\"", "48Mp"], 
         colors: ["#31353a", "#f2f3ee", "#e5dbea", "#d0e3ed"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
+        sim: ["eSIM", "SIM + eSIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/2f7/100500_800_140cd750bba9870f18aada2478b24840a/d3tf4gy4fvsh1uacmwk9cvfx576r6hfp.jpg",
         images: {
             "#31353a": "https://static.re-store.ru/upload/resize_cache/iblock/2f7/100500_800_140cd750bba9870f18aada2478b24840a/d3tf4gy4fvsh1uacmwk9cvfx576r6hfp.jpg",
@@ -69,10 +82,11 @@ const products = [
             "128 ГБ": 799,
             "256 ГБ": 899,
             "512 ГБ": 1099
-        }
+        },
+        simPrices: { "eSIM": 0, "SIM + eSIM": 30 }
     },
 
-    // iPhone 16 Series
+    // --- iPHONE 16 SERIES ---
     { 
         id: "i16promax", 
         title: "iPhone 16 Pro Max", 
@@ -81,6 +95,7 @@ const products = [
         specs: ["A18 Pro", "Титановый корпус", "Camera Control"], 
         colors: ["#454545", "#f5f5f0", "#d1c7b7", "#3b3c3e"],
         storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
+        sim: ["eSIM", "SIM + eSIM", "Dual SIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/e7a/100500_800_140cd750bba9870f18aada2478b24840a/3fkzizh2j3ecnj83n008g53uk15biuup.jpg",
         images: {
             "#454545": "https://static.re-store.ru/upload/resize_cache/iblock/e7a/100500_800_140cd750bba9870f18aada2478b24840a/3fkzizh2j3ecnj83n008g53uk15biuup.jpg",
@@ -92,7 +107,8 @@ const products = [
             "256 ГБ": 1099,
             "512 ГБ": 1299,
             "1 ТБ": 1499
-        }
+        },
+        simPrices: { "eSIM": 0, "SIM + eSIM": 40, "Dual SIM": 80 }
     },
     { 
         id: "i16pro", 
@@ -102,6 +118,7 @@ const products = [
         specs: ["A18 Pro", "4K 120fps"], 
         colors: ["#454545", "#f5f5f0", "#d1c7b7", "#3b3c3e"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ", "1 ТБ"],
+        sim: ["eSIM", "SIM + eSIM", "Dual SIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/ca9/100500_800_140cd750bba9870f18aada2478b24840a/1um5lfka1r127hpc1c6y2r73q4x2l339.jpg",
         images: {
             "#454545": "https://static.re-store.ru/upload/resize_cache/iblock/ca9/100500_800_140cd750bba9870f18aada2478b24840a/1um5lfka1r127hpc1c6y2r73q4x2l339.jpg",
@@ -114,7 +131,8 @@ const products = [
             "256 ГБ": 1099,
             "512 ГБ": 1299,
             "1 ТБ": 1499
-        }
+        },
+        simPrices: { "eSIM": 0, "SIM + eSIM": 30, "Dual SIM": 70 }
     },
     { 
         id: "i16", 
@@ -124,6 +142,7 @@ const products = [
         specs: ["A18 Chip", "Action Button"], 
         colors: ["#2d2e32", "#f9f9f9", "#7db6d0", "#d89ec5", "#a9bfa1"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
+        sim: ["eSIM", "SIM + eSIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/938/100500_800_140cd750bba9870f18aada2478b24840a/0nezbz8sc7xr6vzyjmw7tjzx9al17n95.jpg",
         images: {
             "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/938/100500_800_140cd750bba9870f18aada2478b24840a/0nezbz8sc7xr6vzyjmw7tjzx9al17n95.jpg",
@@ -132,11 +151,8 @@ const products = [
             "#d89ec5": "https://static.re-store.ru/upload/resize_cache/iblock/938/100500_800_140cd750bba9870f18aada2478b24840a/3nezbz8sc7xr6vzyjmw7tjzx9al17n95.jpg",
             "#a9bfa1": "https://static.re-store.ru/upload/resize_cache/iblock/938/100500_800_140cd750bba9870f18aada2478b24840a/4nezbz8sc7xr6vzyjmw7tjzx9al17n95.jpg"
         },
-        storagePrices: {
-            "128 ГБ": 799,
-            "256 ГБ": 899,
-            "512 ГБ": 1099
-        }
+        storagePrices: { "128 ГБ": 799, "256 ГБ": 899, "512 ГБ": 1099 },
+        simPrices: { "eSIM": 0, "SIM + eSIM": 30 }
     },
     { 
         id: "i16plus", 
@@ -146,6 +162,7 @@ const products = [
         specs: ["A18", "6.7\""], 
         colors: ["#2d2e32", "#f9f9f9", "#7db6d0", "#d89ec5", "#a9bfa1"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
+        sim: ["eSIM", "SIM + eSIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/e54/100500_800_140cd750bba9870f18aada2478b24840a/2ejqmg2ifqb3bmoya38k9u3owbqygrz1.jpg",
         images: {
             "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/e54/100500_800_140cd750bba9870f18aada2478b24840a/2ejqmg2ifqb3bmoya38k9u3owbqygrz1.jpg",
@@ -154,14 +171,11 @@ const products = [
             "#d89ec5": "https://static.re-store.ru/upload/resize_cache/iblock/e54/100500_800_140cd750bba9870f18aada2478b24840a/4ejqmg2ifqb3bmoya38k9u3owbqygrz1.jpg",
             "#a9bfa1": "https://static.re-store.ru/upload/resize_cache/iblock/e54/100500_800_140cd750bba9870f18aada2478b24840a/5ejqmg2ifqb3bmoya38k9u3owbqygrz1.jpg"
         },
-        storagePrices: {
-            "128 ГБ": 899,
-            "256 ГБ": 999,
-            "512 ГБ": 1199
-        }
+        storagePrices: { "128 ГБ": 899, "256 ГБ": 999, "512 ГБ": 1199 },
+        simPrices: { "eSIM": 0, "SIM + eSIM": 30 }
     },
 
-    // iPhone 15 Series
+    // --- iPHONE 15 SERIES ---
     { 
         id: "i15promax", 
         title: "iPhone 15 Pro Max", 
@@ -170,6 +184,7 @@ const products = [
         specs: ["A17 Pro", "USB-C"], 
         colors: ["#454d5b", "#e3e4e5", "#f7e8d0", "#2d2e32"],
         storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
+        sim: ["eSIM", "SIM + eSIM", "Dual SIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/dc0/100500_800_140cd750bba9870f18aada2478b24840a/81ysro3zyue28kqvn357mugae05nsgvl.jpg",
         images: {
             "#454d5b": "https://static.re-store.ru/upload/resize_cache/iblock/dc0/100500_800_140cd750bba9870f18aada2478b24840a/81ysro3zyue28kqvn357mugae05nsgvl.jpg",
@@ -177,11 +192,8 @@ const products = [
             "#f7e8d0": "https://static.re-store.ru/upload/resize_cache/iblock/dc0/100500_800_140cd750bba9870f18aada2478b24840a/61ysro3zyue28kqvn357mugae05nsgvl.jpg",
             "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/dc0/100500_800_140cd750bba9870f18aada2478b24840a/51ysro3zyue28kqvn357mugae05nsgvl.jpg"
         },
-        storagePrices: {
-            "256 ГБ": 899,
-            "512 ГБ": 1099,
-            "1 ТБ": 1299
-        }
+        storagePrices: { "256 ГБ": 899, "512 ГБ": 1099, "1 ТБ": 1299 },
+        simPrices: { "eSIM": 0, "SIM + eSIM": 20, "Dual SIM": 60 }
     },
     { 
         id: "i15", 
@@ -191,6 +203,7 @@ const products = [
         specs: ["USB-C", "48Mp"], 
         colors: ["#3c3d3a", "#e1e4e1", "#d4e4f2", "#f2e4ad", "#e6d7d9"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
+        sim: ["eSIM", "SIM + eSIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/b26/100500_800_140cd750bba9870f18aada2478b24840a/sbp132akcddo5g2yvmjvofpib40b6c41.jpg",
         images: {
             "#3c3d3a": "https://static.re-store.ru/upload/resize_cache/iblock/b26/100500_800_140cd750bba9870f18aada2478b24840a/sbp132akcddo5g2yvmjvofpib40b6c41.jpg",
@@ -199,14 +212,11 @@ const products = [
             "#f2e4ad": "https://static.re-store.ru/upload/resize_cache/iblock/b26/100500_800_140cd750bba9870f18aada2478b24840a/cbp132akcddo5g2yvmjvofpib40b6c41.jpg",
             "#e6d7d9": "https://static.re-store.ru/upload/resize_cache/iblock/b26/100500_800_140cd750bba9870f18aada2478b24840a/dbp132akcddo5g2yvmjvofpib40b6c41.jpg"
         },
-        storagePrices: {
-            "128 ГБ": 599,
-            "256 ГБ": 699,
-            "512 ГБ": 899
-        }
+        storagePrices: { "128 ГБ": 599, "256 ГБ": 699, "512 ГБ": 899 },
+        simPrices: { "eSIM": 0, "SIM + eSIM": 20 }
     },
 
-    // iPads
+    // --- iPADS ---
     { 
         id: "ipadpro", 
         title: "Apple iPad Pro 13 (2025)", 
@@ -220,15 +230,10 @@ const products = [
             "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/c31/100500_800_140cd750bba9870f18aada2478b24840a/3a89519konnv8x0gnp2cry8q8mnd6a88.jpg",
             "#e3e4e5": "https://static.re-store.ru/upload/resize_cache/iblock/c31/100500_800_140cd750bba9870f18aada2478b24840a/4a89519konnv8x0gnp2cry8q8mnd6a88.jpg"
         },
-        storagePrices: {
-            "256 ГБ": 999,
-            "512 ГБ": 1199,
-            "1 ТБ": 1599,
-            "2 ТБ": 1999
-        }
+        storagePrices: { "256 ГБ": 999, "512 ГБ": 1199, "1 ТБ": 1599, "2 ТБ": 1999 }
     },
 
-    // MacBooks
+    // --- MacBOOKS ---
     { 
         id: "mbp14", 
         title: "Apple MacBook Pro 14\"", 
@@ -241,13 +246,8 @@ const products = [
         images: {
             "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg",
             "#bfc0c2": "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/ayc9xmj0wiafd5itij7qw8k11vqf1e92.jpg"
-            // Добавь другие цвета если есть ссылки
         },
-        storagePrices: {
-            "512 ГБ": 1599,
-            "1 ТБ": 1799,
-            "2 ТБ": 2199
-        }
+        storagePrices: { "512 ГБ": 1599, "1 ТБ": 1799, "2 ТБ": 2199 }
     }
 ];
 
@@ -255,10 +255,15 @@ app.get('/api/products', (req, res) => {
     res.json(products);
 });
 
-// Роут для заказов (нужен для api.js)
 app.post('/api/order', (req, res) => {
-    const { productId, selectedColor, selectedStorage, price } = req.body;
-    console.log(`Новый заказ: ${productId}, Цвет: ${selectedColor}, Память: ${selectedStorage}, Цена: ${price}`);
+    const { productId, selectedColor, selectedStorage, selectedSim, price } = req.body;
+    console.log(`--- НОВЫЙ ЗАКАЗ ---`);
+    console.log(`Товар: ${productId}`);
+    console.log(`Цвет: ${selectedColor}`);
+    console.log(`Память: ${selectedStorage}`);
+    console.log(`SIM: ${selectedSim || 'N/A'}`);
+    console.log(`Цена: ${price} USDT`);
+    console.log(`-------------------`);
     res.json({ success: true, message: "Заказ оформлен" });
 });
 

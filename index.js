@@ -139,7 +139,7 @@ const products = [
         title: "Apple iPhone 16", 
         price: 799, 
         description: "Яркий и производительный.", 
-        specs: ["A18 Chip", "6.3\""], 
+        specs: ["A18 Chip", "6.1\""], 
         colors: ["#efeff5", "#6a95ec", "#67c595", "#141414", "#e40bf4"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
         sim: ["eSIM", "SIM + eSIM"],

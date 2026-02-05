@@ -246,16 +246,16 @@ const products = [
         description: "Профессиональный инструмент на чипе M5.", 
         specs: ["M5 Chip", "10-core CPU", "16GB Unified RAM"], 
         colors: ["#141414", "#9ca2b0"],
-        storage: ["512 ГБ", "1 ТБ", "2 ТБ"],
+        storage: ["SSD 512Gb ОЗУ 16Gb", "SSD 1ТБ ОЗУ 24Gb", "SSD 2ТБ ОЗУ 48Gb"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/712/100500_800_140cd750bba9870f18aada2478b24840a/2d24borrhwi0dmwizcuilv1515g5asst.jpg",
         images: {
             "#141414": "https://static.re-store.ru/upload/resize_cache/iblock/712/100500_800_140cd750bba9870f18aada2478b24840a/2d24borrhwi0dmwizcuilv1515g5asst.jpg",
             "#9ca2b0": "https://static.re-store.ru/upload/resize_cache/iblock/f90/100500_800_140cd750bba9870f18aada2478b24840a/vli1ibd549jxssugnie36iwfwfdd1h91.jpg"
         },
         storagePrices: {
-            "512 ГБ": 1599,
-            "1 ТБ": 1799,
-            "2 ТБ": 2199
+            "SSD 512Gb ОЗУ 16Gb": 2399,
+            "SSD 1ТБ ОЗУ 24Gb": 2599,
+            "SSD 2ТБ ОЗУ 48Gb": 3299
         }
     },
     { 

@@ -196,16 +196,18 @@ const products = [
     },
     { 
         id: "ipadair", 
-        title: "iPad Air 13", 
+        title: "Apple iPad Air (2025) M3 13" Wi-Fi + Cellular, 
         price: 799, 
         description: "Больше экрана. Больше возможностей.", 
         specs: ["M2 Chip", "Liquid Retina", "Touch ID"], 
-        colors: ["#3b3c3e", "#e3e4e5", "#d1c7b7", "#7db6d0"],
+        colors: ["#5cabff, "#5a636d", "#b450e2", "#e2ddbb"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ", "1 ТБ"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/179/100500_800_140cd750bba9870f18aada2478b24840a/7ayp8sh0n758j8875znd1e6w6c4p2h6n.jpg",
         images: {
-            "#3b3c3e": "https://static.re-store.ru/upload/resize_cache/iblock/179/100500_800_140cd750bba9870f18aada2478b24840a/7ayp8sh0n758j8875znd1e6w6c4p2h6n.jpg",
-            "#e3e4e5": "https://static.re-store.ru/upload/resize_cache/iblock/179/100500_800_140cd750bba9870f18aada2478b24840a/8ayp8sh0n758j8875znd1e6w6c4p2h6n.jpg"
+            "#5cabff": "https://static.re-store.ru/upload/resize_cache/iblock/69a/100500_800_140cd750bba9870f18aada2478b24840a/5td2b1nfucmf0t628ttpi0i0alv23arv.jpg",
+            "#5a636d": "https://static.re-store.ru/upload/resize_cache/iblock/d1c/100500_800_140cd750bba9870f18aada2478b24840a/bfxgoq3swz0txa76bmebbpyn5y21g9cl.jpg",
+            "#b450e2": "https://static.re-store.ru/upload/resize_cache/iblock/07f/100500_800_140cd750bba9870f18aada2478b24840a/1k15b0ud4vihafcx1o6ifiz8qfi7sxy5.jpg",
+            "#e2ddbb": "https://static.re-store.ru/upload/resize_cache/iblock/86d/100500_800_140cd750bba9870f18aada2478b24840a/b58buipwqpsokmodxkk754uujbp7esnv.jpg"
         },
         storagePrices: {
             "128 ГБ": 799,
@@ -216,15 +218,17 @@ const products = [
     },
     { 
         id: "ipadmini", 
-        title: "iPad mini", 
+        title: "Apple iPad mini (2024) Wi-Fi+Cellular", 
         price: 499, 
         description: "Огромная мощь в миниатюрном корпусе.", 
         specs: ["A17 Pro", "8.3\"", "Apple Pencil Pro Support"], 
-        colors: ["#3b3c3e", "#e3e4e5", "#d89ec5", "#a9bfa1"],
+        colors: ["#5cabff, "#5a636d", "#e2ddbb"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/9da/100500_800_140cd750bba9870f18aada2478b24840a/y1h9l42nry1v93765znd1e6w6c4p2h6n.jpg",
         images: {
-            "#3b3c3e": "https://static.re-store.ru/upload/resize_cache/iblock/9da/100500_800_140cd750bba9870f18aada2478b24840a/y1h9l42nry1v93765znd1e6w6c4p2h6n.jpg"
+            "#5cabff": "https://static.re-store.ru/upload/resize_cache/iblock/7c6/100500_800_140cd750bba9870f18aada2478b24840a/k42tnxufuvqp4ejnaxikhzbp322ld1aw.jpg",
+            "#5a636d": "https://static.re-store.ru/upload/resize_cache/iblock/077/100500_800_140cd750bba9870f18aada2478b24840a/qm5ed6nwk1mlcxmdm9i3xeq5gq56dyyl.jpg",
+            "#e2ddbb": "https://static.re-store.ru/upload/resize_cache/iblock/65a/100500_800_140cd750bba9870f18aada2478b24840a/jw70c62k7itfk5jvhsr62sb7ddzuoqit.jpg"
         },
         storagePrices: {
             "128 ГБ": 499,
@@ -236,16 +240,16 @@ const products = [
     // --- MacBOOKS ---
     { 
         id: "mbp14", 
-        title: "MacBook Pro 14\"", 
+        title: "Apple MacBook Pro 14\"", 
         price: 1599, 
-        description: "Профессиональный инструмент на чипе M4.", 
-        specs: ["M4 Chip", "10-core CPU", "16GB Unified RAM"], 
-        colors: ["#2d2e32", "#bfc0c2"],
+        description: "Профессиональный инструмент на чипе M5.", 
+        specs: ["M5 Chip", "10-core CPU", "16GB Unified RAM"], 
+        colors: ["#141414", "#9ca2b0"],
         storage: ["512 ГБ", "1 ТБ", "2 ТБ"],
-        image: "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg",
+        image: "https://static.re-store.ru/upload/resize_cache/iblock/712/100500_800_140cd750bba9870f18aada2478b24840a/2d24borrhwi0dmwizcuilv1515g5asst.jpg",
         images: {
-            "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg",
-            "#bfc0c2": "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/ayc9xmj0wiafd5itij7qw8k11vqf1e92.jpg"
+            "#141414": "https://static.re-store.ru/upload/resize_cache/iblock/712/100500_800_140cd750bba9870f18aada2478b24840a/2d24borrhwi0dmwizcuilv1515g5asst.jpg",
+            "#9ca2b0": "https://static.re-store.ru/upload/resize_cache/iblock/f90/100500_800_140cd750bba9870f18aada2478b24840a/vli1ibd549jxssugnie36iwfwfdd1h91.jpg"
         },
         storagePrices: {
             "512 ГБ": 1599,
@@ -255,38 +259,42 @@ const products = [
     },
     { 
         id: "mbp16", 
-        title: "MacBook Pro 16\"", 
+        title: "MApple MacBook Pro 16"\"", 
         price: 2499, 
         description: "Максимум экрана и производительности.", 
         specs: ["M4 Max", "Liquid Retina XDR", "96W Charge"], 
-        colors: ["#2d2e32", "#bfc0c2"],
-        storage: ["1 ТБ", "2 ТБ", "4 ТБ"],
+        colors: ["#141414", "#9ca2b0"],
+        storage: ["SSD 1ТБ ОЗУ 36Gb", "SSD 2ТБ ОЗУ 64Gb", "SSD 8ТБ ОЗУ 128Gb"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg",
         images: {
-            "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg"
+            "#141414": "https://static.re-store.ru/upload/iblock/93a/cedafw22o08vgt62u0wy4xtrkaubxh0j.png",
+            "#9ca2b0": "https://static.re-store.ru/upload/iblock/28f/zwz3kl0dslap8ttqbxinh7uzt4il7a6d.png"
         },
         storagePrices: {
-            "1 ТБ": 2499,
-            "2 ТБ": 2899,
-            "4 ТБ": 3699
+            "SSD 1ТБ ОЗУ 36Gb": 2499,
+            "SSD 2ТБ ОЗУ 64Gb": 2899,
+            "SSD 8ТБ ОЗУ 128Gb": 3699
         }
     },
     { 
         id: "mbair", 
-        title: "MacBook Air 13 (M3)", 
+        title: "Apple MacBook Air 13 (M4)", 
         price: 1099, 
         description: "Тонкий, легкий, бесшумный.", 
-        specs: ["M3 Chip", "18 часов работы", "Liquid Retina"], 
-        colors: ["#2d2e32", "#e3e4e5", "#d1c7b7", "#3b3c3e"],
-        storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
-        image: "https://static.re-store.ru/upload/resize_cache/iblock/785/100500_800_140cd750bba9870f18aada2478b24840a/6vdy9sh0n758j8875znd1e6w6c4p2h6n.jpg",
+        specs: ["M4 Chip", "18 часов работы", "Liquid Retina"], 
+        colors: ["#9ca2b0", "#141414", "#9ca2b0", "#e2ddbb"],
+        storage: ["SSD 256Gb ОЗУ 16Gb", "SSD 512Gb ОЗУ 24Gb", "SSD 1ТБ ОЗУ 32Gb"],
+        image: "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg",
         images: {
-            "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/785/100500_800_140cd750bba9870f18aada2478b24840a/6vdy9sh0n758j8875znd1e6w6c4p2h6n.jpg"
+            "#9ca2b0": "https://static.re-store.ru/upload/resize_cache/iblock/f63/100500_800_140cd750bba9870f18aada2478b24840a/hb9n4k5zgl3gjbkvo0yvd7liukcdtkvr.jpg",
+            "#141414": "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg",
+            "#9ca2b0": "https://static.re-store.ru/upload/resize_cache/iblock/986/100500_800_140cd750bba9870f18aada2478b24840a/waidg8h9cgj34fqht941w4rm4uvxq0q3.jpg",
+            "#e2ddbb": "https://static.re-store.ru/upload/resize_cache/iblock/bbe/100500_800_140cd750bba9870f18aada2478b24840a/3finphiume3tp0dwibjhte78fi1tyeie.jpg"
         },
         storagePrices: {
-            "256 ГБ": 1099,
-            "512 ГБ": 1299,
-            "1 ТБ": 1499
+            "SSD 256Gb ОЗУ 16Gb": 1399,
+            "SSD 512Gb ОЗУ 24Gb": 2099,
+            "SSD 1ТБ ОЗУ 32Gb": 3199
         }
     }
 ];

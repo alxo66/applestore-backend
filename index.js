@@ -77,6 +77,7 @@ const products = [
             "#9287e8": "https://static.re-store.ru/upload/resize_cache/iblock/fbe/100500_800_140cd750bba9870f18aada2478b24840a/xiypmqi1pm3adi8nvzotf9sht7q8iige.jpg"
         },
         storagePrices: {
+            "128 ГБ": 799,
             "256 ГБ": 899,
             "512 ГБ": 1099
         },
@@ -104,7 +105,7 @@ const products = [
             "#d5af6c": "https://static.re-store.ru/upload/resize_cache/iblock/0bc/100500_800_140cd750bba9870f18aada2478b24840a/0eybzk3ijxb0dr3ox8gxbss0e1s4jmae.jpg"
         },
         storagePrices: {
-            "256 ГБ": 999,
+            "256 ГБ": 1099,
             "512 ГБ": 1199,
             "1 ТБ": 1399
         },
@@ -127,9 +128,9 @@ const products = [
             "#d5af6c": "https://static.re-store.ru/upload/resize_cache/iblock/1f5/100500_800_140cd750bba9870f18aada2478b24840a/ymntx2qy15nj7x154c10qntwsbghifhb.jpg"
         },
         storagePrices: {
-            "128 ГБ": 899,
-            "256 ГБ": 999,
-            "512 ГБ": 1199,
+            "128 ГБ": 999,
+            "256 ГБ": 1099,
+            "512 ГБ": 1299,
             "1 ТБ": 1599
         },
         simPrices: { "eSIM": 0, "SIM + eSIM": 30, "Dual SIM": 70 }
@@ -199,8 +200,8 @@ const products = [
         title: "Apple iPad Air (2025) M3 13", 
         price: 799, 
         description: "Больше экрана. Больше возможностей.", 
-        specs: ["M2 Chip", "Liquid Retina", "WiFi + Cellular"], 
-        colors: ["#5cabff, "#5a636d", "#b450e2", "#e2ddbb"],
+        specs: ["M3 Chip", "Liquid Retina", "WiFi + Cellular"], 
+        colors: ["#5cabff", "#5a636d", "#b450e2", "#e2ddbb"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ", "1 ТБ"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/179/100500_800_140cd750bba9870f18aada2478b24840a/7ayp8sh0n758j8875znd1e6w6c4p2h6n.jpg",
         images: {
@@ -222,7 +223,7 @@ const products = [
         price: 499, 
         description: "Огромная мощь в миниатюрном корпусе.", 
         specs: ["A17 Pro", "8.3\"", "WiFi + Cellular"], 
-        colors: ["#5cabff, "#5a636d", "#e2ddbb"],
+        colors: ["#5cabff", "#5a636d", "#e2ddbb"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/9da/100500_800_140cd750bba9870f18aada2478b24840a/y1h9l42nry1v93765znd1e6w6c4p2h6n.jpg",
         images: {
@@ -240,7 +241,7 @@ const products = [
     // --- MacBOOKS ---
     { 
         id: "mbp14", 
-        title: "Apple MacBook Pro 14"\"", 
+        title: "Apple MacBook Pro 14\"", 
         price: 1599, 
         description: "Профессиональный инструмент на чипе M5.", 
         specs: ["M5 Chip", "10-core CPU", "16GB Unified RAM"], 
@@ -259,7 +260,7 @@ const products = [
     },
     { 
         id: "mbp16", 
-        title: "MApple MacBook Pro 16"\"", 
+        title: "Apple MacBook Pro 16\"", 
         price: 2499, 
         description: "Максимум экрана и производительности.", 
         specs: ["M4 Max", "Liquid Retina XDR", "96W Charge"], 
@@ -282,13 +283,12 @@ const products = [
         price: 1099, 
         description: "Тонкий, легкий, бесшумный.", 
         specs: ["M4 Chip", "18 часов работы", "Liquid Retina"], 
-        colors: ["#9ca2b0", "#141414", "#9ca2b0", "#e2ddbb"],
+        colors: ["#9ca2b0", "#141414", "#e2ddbb"],
         storage: ["SSD 256Gb ОЗУ 16Gb", "SSD 512Gb ОЗУ 24Gb", "SSD 1ТБ ОЗУ 32Gb"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg",
         images: {
             "#9ca2b0": "https://static.re-store.ru/upload/resize_cache/iblock/f63/100500_800_140cd750bba9870f18aada2478b24840a/hb9n4k5zgl3gjbkvo0yvd7liukcdtkvr.jpg",
             "#141414": "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg",
-            "#9ca2b0": "https://static.re-store.ru/upload/resize_cache/iblock/986/100500_800_140cd750bba9870f18aada2478b24840a/waidg8h9cgj34fqht941w4rm4uvxq0q3.jpg",
             "#e2ddbb": "https://static.re-store.ru/upload/resize_cache/iblock/bbe/100500_800_140cd750bba9870f18aada2478b24840a/3finphiume3tp0dwibjhte78fi1tyeie.jpg"
         },
         storagePrices: {

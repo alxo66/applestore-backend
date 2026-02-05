@@ -176,7 +176,7 @@ const products = [
     // --- iPADS ---
     { 
         id: "ipadpro", 
-        title: "Apple iPad Pro 13" (M5, 2025) WiFi + Cellular", 
+        title: "Apple iPad Pro 13 (M5, 2025) WiFi + Cellular", 
         price: 1399, 
         description: "Тонкий. Мощный. OLED-дисплей нового поколения.", 
         specs: ["M5 Chip", "Ultra Retina OLED", "WiFi"], 
@@ -240,7 +240,7 @@ const products = [
     // --- MacBOOKS ---
     { 
         id: "mbp14", 
-        title: "Apple MacBook Pro 14\"", 
+        title: "Apple MacBook Pro 14"\"", 
         price: 1599, 
         description: "Профессиональный инструмент на чипе M5.", 
         specs: ["M5 Chip", "10-core CPU", "16GB Unified RAM"], 

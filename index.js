@@ -137,7 +137,7 @@ const products = [
     { 
         id: "i16", 
         title: "Apple iPhone 16", 
-        price: 799, 
+        price: 599, 
         description: "Яркий и производительный.", 
         specs: ["A18 Chip", "6.1\""], 
         colors: ["#efeff5", "#6a95ec", "#67c595", "#141414", "#e40bf4"],
@@ -158,63 +158,40 @@ const products = [
     // --- iPHONE 15 SERIES ---
     { 
         id: "i15promax", 
-        title: "iPhone 15 Pro Max", 
+        title: "Apple iPhone 15 Pro Max", 
         price: 899, 
         description: "Первый титановый iPhone с 5х зумом.", 
-        specs: ["A17 Pro", "USB-C 3.0", "Titanium"], 
-        colors: ["#454d5b", "#e3e4e5", "#f7e8d0", "#2d2e32"],
+        specs: ["A17 Pro", "6.7\""], 
+        colors: ["#efeff5"],
         storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
         sim: ["eSIM", "SIM + eSIM"],
-        image: "https://static.re-store.ru/upload/resize_cache/iblock/dc0/100500_800_140cd750bba9870f18aada2478b24840a/81ysro3zyue28kqvn357mugae05nsgvl.jpg",
+        image: "https://static.re-store.ru/upload/resize_cache/iblock/cf6/100500_800_140cd750bba9870f18aada2478b24840a/wvs0w8asdqamtg3mhr6jxl1de8186fs7.jpg",
         images: {
-            "#454d5b": "https://static.re-store.ru/upload/resize_cache/iblock/dc0/100500_800_140cd750bba9870f18aada2478b24840a/81ysro3zyue28kqvn357mugae05nsgvl.jpg",
-            "#e3e4e5": "https://static.re-store.ru/upload/resize_cache/iblock/dc0/100500_800_140cd750bba9870f18aada2478b24840a/71ysro3zyue28kqvn357mugae05nsgvl.jpg",
-            "#f7e8d0": "https://static.re-store.ru/upload/resize_cache/iblock/dc0/100500_800_140cd750bba9870f18aada2478b24840a/61ysro3zyue28kqvn357mugae05nsgvl.jpg",
-            "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/dc0/100500_800_140cd750bba9870f18aada2478b24840a/51ysro3zyue28kqvn357mugae05nsgvl.jpg"
+            "#efeff5": "https://static.re-store.ru/upload/resize_cache/iblock/cf6/100500_800_140cd750bba9870f18aada2478b24840a/wvs0w8asdqamtg3mhr6jxl1de8186fs7.jpg",
         },
-        storagePrices: { "256 ГБ": 899, "512 ГБ": 1099, "1 ТБ": 1299 },
+        storagePrices: { "256 ГБ": 799, "512 ГБ": 899, "1 ТБ": 999 },
         simPrices: { "eSIM": 0, "SIM + eSIM": 20, "Dual SIM": 60 }
-    },
-    { 
-        id: "i15", 
-        title: "iPhone 15 Plus", 
-        price: 599, 
-        description: "Dynamic Island теперь для всех.", 
-        specs: ["USB-C", "48Mp Camera", "A16 Bionic"], 
-        colors: ["#3c3d3a", "#e1e4e1", "#d4e4f2", "#f2e4ad", "#e6d7d9"],
-        storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
-        sim: ["eSIM", "SIM + eSIM"],
-        image: "https://static.re-store.ru/upload/resize_cache/iblock/b26/100500_800_140cd750bba9870f18aada2478b24840a/sbp132akcddo5g2yvmjvofpib40b6c41.jpg",
-        images: {
-            "#3c3d3a": "https://static.re-store.ru/upload/resize_cache/iblock/b26/100500_800_140cd750bba9870f18aada2478b24840a/sbp132akcddo5g2yvmjvofpib40b6c41.jpg",
-            "#e1e4e1": "https://static.re-store.ru/upload/resize_cache/iblock/b26/100500_800_140cd750bba9870f18aada2478b24840a/abp132akcddo5g2yvmjvofpib40b6c41.jpg",
-            "#d4e4f2": "https://static.re-store.ru/upload/resize_cache/iblock/b26/100500_800_140cd750bba9870f18aada2478b24840a/bbp132akcddo5g2yvmjvofpib40b6c41.jpg",
-            "#f2e4ad": "https://static.re-store.ru/upload/resize_cache/iblock/b26/100500_800_140cd750bba9870f18aada2478b24840a/cbp132akcddo5g2yvmjvofpib40b6c41.jpg",
-            "#e6d7d9": "https://static.re-store.ru/upload/resize_cache/iblock/b26/100500_800_140cd750bba9870f18aada2478b24840a/dbp132akcddo5g2yvmjvofpib40b6c41.jpg"
-        },
-        storagePrices: { "128 ГБ": 599, "256 ГБ": 699, "512 ГБ": 899 },
-        simPrices: { "eSIM": 0, "SIM + eSIM": 20 }
     },
 
     // --- iPADS ---
     { 
         id: "ipadpro", 
-        title: "iPad Pro 13 (2025)", 
-        price: 1299, 
+        title: "Apple iPad Pro 13" (M5, 2025) Wi-Fi + Cellular", 
+        price: 1399, 
         description: "Тонкий. Мощный. OLED-дисплей нового поколения.", 
         specs: ["M5 Chip", "Ultra Retina OLED", "Wi-Fi"], 
-        colors: ["#2d2e32", "#e3e4e5"],
+        colors: ["#9ca2b0", "#efeff5"],
         storage: ["256 ГБ", "512 ГБ", "1 ТБ", "2 ТБ"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/c31/100500_800_140cd750bba9870f18aada2478b24840a/3a89519konnv8x0gnp2cry8q8mnd6a88.jpg",
         images: {
-            "#2d2e32": "https://static.re-store.ru/upload/resize_cache/iblock/c31/100500_800_140cd750bba9870f18aada2478b24840a/3a89519konnv8x0gnp2cry8q8mnd6a88.jpg",
-            "#e3e4e5": "https://static.re-store.ru/upload/resize_cache/iblock/c31/100500_800_140cd750bba9870f18aada2478b24840a/4a89519konnv8x0gnp2cry8q8mnd6a88.jpg"
+            "#9ca2b0": "https://static.re-store.ru/upload/resize_cache/iblock/c31/100500_800_140cd750bba9870f18aada2478b24840a/3a89519konnv8x0gnp2cry8q8mnd6a88.jpg",
+            "#efeff5": "https://static.re-store.ru/upload/resize_cache/iblock/8d3/100500_800_140cd750bba9870f18aada2478b24840a/aiebiutl1oj68lvse8a0ia8txxaah05i.jpg"
         },
         storagePrices: {
-            "256 ГБ": 1299,
+            "256 ГБ": 1399,
             "512 ГБ": 1499,
-            "1 ТБ": 1899,
-            "2 ТБ": 2299
+            "1 ТБ": 1699,
+            "2 ТБ": 1999
         }
     },
     { 

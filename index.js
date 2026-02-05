@@ -203,7 +203,7 @@ const products = [
         specs: ["M3 Chip", "Liquid Retina", "WiFi + Cellular"], 
         colors: ["#5cabff", "#5a636d", "#b450e2", "#e2ddbb"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ", "1 ТБ"],
-        image: "https://static.re-store.ru/upload/resize_cache/iblock/179/100500_800_140cd750bba9870f18aada2478b24840a/7ayp8sh0n758j8875znd1e6w6c4p2h6n.jpg",
+        image: "https://static.re-store.ru/upload/resize_cache/iblock/69a/100500_800_140cd750bba9870f18aada2478b24840a/5td2b1nfucmf0t628ttpi0i0alv23arv.jpg",
         images: {
             "#5cabff": "https://static.re-store.ru/upload/resize_cache/iblock/69a/100500_800_140cd750bba9870f18aada2478b24840a/5td2b1nfucmf0t628ttpi0i0alv23arv.jpg",
             "#5a636d": "https://static.re-store.ru/upload/resize_cache/iblock/d1c/100500_800_140cd750bba9870f18aada2478b24840a/bfxgoq3swz0txa76bmebbpyn5y21g9cl.jpg",
@@ -225,7 +225,7 @@ const products = [
         specs: ["A17 Pro", "8.3\"", "WiFi + Cellular"], 
         colors: ["#5cabff", "#5a636d", "#e2ddbb"],
         storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
-        image: "https://static.re-store.ru/upload/resize_cache/iblock/9da/100500_800_140cd750bba9870f18aada2478b24840a/y1h9l42nry1v93765znd1e6w6c4p2h6n.jpg",
+        image: "https://static.re-store.ru/upload/resize_cache/iblock/7c6/100500_800_140cd750bba9870f18aada2478b24840a/k42tnxufuvqp4ejnaxikhzbp322ld1aw.jpg",
         images: {
             "#5cabff": "https://static.re-store.ru/upload/resize_cache/iblock/7c6/100500_800_140cd750bba9870f18aada2478b24840a/k42tnxufuvqp4ejnaxikhzbp322ld1aw.jpg",
             "#5a636d": "https://static.re-store.ru/upload/resize_cache/iblock/077/100500_800_140cd750bba9870f18aada2478b24840a/qm5ed6nwk1mlcxmdm9i3xeq5gq56dyyl.jpg",

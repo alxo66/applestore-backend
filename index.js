@@ -5,6 +5,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// --- РЕКВИЗИТЫ КОШЕЛЬКОВ ---
+const WALLETS = {
+    BTC: "bc1qlgf034j5nhqh0ltsqnhrepchlxwlykrtujvupq",
+    ETH: "0x5Fc25f19E18Dfc7d19595cB7d1eB0D0605b9A3FA",
+    USDT_TRC20: "TMM1xGXxAY9R66hGPxKNfxo81KrmdyrszE",
+    TON: "UQD-XSYf6P-NyjbSJYDHsgHnk0e5CiJQ2-NCZddro_5-c8B4"
+};
+
 const products = [
     // --- iPHONE 17 SERIES ---
     { 
@@ -299,10 +307,17 @@ const products = [
     }
 ];
 
+// 1. Эндпоинт получения товаров
 app.get('/api/products', (req, res) => {
     res.json(products);
 });
 
+// 2. Эндпоинт получения адресов кошельков
+app.get('/api/wallets', (req, res) => {
+    res.json(WALLETS);
+});
+
+// 3. Эндпоинт оформления обычного заказа
 app.post('/api/order', (req, res) => {
     const { productId, selectedOptions, price } = req.body;
     console.log(`--- НОВЫЙ ЗАКАЗ ---`);
@@ -311,6 +326,23 @@ app.post('/api/order', (req, res) => {
     console.log(`Цена: ${price} USDT`);
     console.log(`-------------------`);
     res.json({ success: true, message: "Заказ оформлен" });
+});
+
+// 4. Эндпоинт уведомления о ручном переводе (новый)
+app.post('/api/manual-deposit', (req, res) => {
+    const { userId, amount, asset, transactionHash } = req.body;
+    
+    console.log(`--- ЗАЯВКА НА ПОПОЛНЕНИЕ (РУЧНАЯ) ---`);
+    console.log(`Пользователь: ${userId || 'Гость'}`);
+    console.log(`Сумма: ${amount} ${asset}`);
+    console.log(`Хэш транзакции: ${transactionHash}`);
+    console.log(`-------------------------------------`);
+    
+    // Здесь позже добавим отправку уведомления в Telegram бота
+    res.json({ 
+        success: true, 
+        message: "Ваша заявка принята. Средства будут зачислены после 1 подтверждения сети." 
+    });
 });
 
 const PORT = process.env.PORT || 3000;

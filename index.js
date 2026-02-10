@@ -1,10 +1,14 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const axios = require('axios'); // Добавлено для функции самопинания
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+// Эндпоинт для проверки связи (чтобы было что пинать)
+app.get('/ping', (req, res) => res.send('pong'));
 
 // --- РЕКВИЗИТЫ КОШЕЛЬКОВ (БЕРУТСЯ ИЗ RENDER ENVIRONMENT VARIABLES) ---
 const WALLETS = {
@@ -282,6 +286,18 @@ app.post('/api/manual-deposit', (req, res) => {
         message: "Ваша заявка принята. Средства будут зачислены после 1 подтверждения сети." 
     });
 });
+
+// --- KEEP-ALIVE ЛОГИКА (НЕ ДАЕТ СЕРВЕРУ УСНУТЬ) ---
+const SERVER_URL = process.env.RENDER_EXTERNAL_URL || `http://localhost:${process.env.PORT || 10000}`;
+
+setInterval(async () => {
+    try {
+        await axios.get(`${SERVER_URL}/ping`);
+        console.log('Keep-alive: Ping successful');
+    } catch (error) {
+        console.error('Keep-alive: Ping failed', error.message);
+    }
+}, 600000); // Пинг каждые 10 минут (600 000 мс)
 
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {

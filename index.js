@@ -10,7 +10,7 @@ app.use(express.json());
 // Эндпоинт для проверки связи (чтобы было что пинать)
 app.get('/ping', (req, res) => res.send('pong'));
 
-// --- РЕКВИЗИТЫ КОШЕЛЬКОВ (БЕРУТСЯ ИЗ RENDER ENVIRONMENT VARIABLES) ---
+// --- РЕКВИЗИТЫ КОШЕЛЬКОВ ---
 const WALLETS = {
     BTC: process.env.BTC_ADDRESS || "bc1qlgf034j5nhqh0ltsqnhrepchlxwlykrtujvupq",
     ETH: process.env.ETH_ADDRESS || "0x5Fc25f19E18Dfc7d19595cB7d1eB0D0605b9A3FA",
@@ -23,11 +23,11 @@ const products = [
     { 
         id: "i17promax", 
         title: "Apple iPhone 17 Pro Max", 
-        price: 1300, 
+        price: 999, 
         description: "Будущее в титановом корпусе. Самый мощный чип A19 Pro.", 
         specs: ["Экран 6.9\"", "A19 Pro"], 
         colors: ["#9ca2b0", "#ff6600", "#000138"],
-        storage: ["256 ГБ", "512 ГБ", "1 ТБ"],
+        storage: ["256 ГБ", "512 ГБ", "1 ТБ", "2ТБ"],
         sim: ["eSIM", "SIM + eSIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/3e7/100500_800_140cd750bba9870f18aada2478b24840a/c6b0ndzv7rqf8u9c456xwvgolvkkdf11.jpg",
         images: {
@@ -35,13 +35,13 @@ const products = [
             "#ff6600": "https://static.re-store.ru/upload/resize_cache/iblock/648/100500_800_140cd750bba9870f18aada2478b24840a/ua63t9h5n5nuasie0sdg772qr4y5xdez.jpg",
             "#000138": "https://static.re-store.ru/upload/resize_cache/iblock/6eb/100500_800_140cd750bba9870f18aada2478b24840a/6lc528gxbxh4duxcc0l9al1ih6vfv58m.jpg"
         },
-        storagePrices: { "256 ГБ": 1299, "512 ГБ": 1899, "1 ТБ": 2399 },
+        storagePrices: { "256 ГБ": 999, "512 ГБ": 1099, "1 ТБ": 1299, "2 ТБ": 1899 },
         simPrices: { "eSIM": 0, "SIM + eSIM": 49, "Dual SIM": 99 }
     },
     { 
         id: "i17pro", 
         title: "Apple iPhone 17 Pro", 
-        price: 999, 
+        price: 939, 
         description: "Профессиональная мощь в новом цвете.", 
         specs: ["A19 Pro", "6.3\""], 
         colors: ["#9ca2b0", "#ff6600", "#000138"],
@@ -53,17 +53,17 @@ const products = [
             "#ff6600": "https://static.re-store.ru/upload/resize_cache/iblock/425/100500_800_140cd750bba9870f18aada2478b24840a/63zba8vr1pr1qx83hjr8hq3qd76uj8of.jpg",
             "#000138": "https://static.re-store.ru/upload/resize_cache/iblock/e54/100500_800_140cd750bba9870f18aada2478b24840a/idywry6hey7xlu9ms9u53a1qalz11uid.jpg",
         },
-        storagePrices: { "256 ГБ": 1199, "512 ГБ": 1399, "1 ТБ": 1599 },
+        storagePrices: { "256 ГБ": 939, "512 ГБ": 1090, "1 ТБ": 1199 },
         simPrices: { "eSIM": 0, "SIM + eSIM": 40, "Dual SIM": 90 }
     },
     { 
         id: "i17", 
         title: "Apple iPhone 17", 
-        price: 799, 
+        price: 729, 
         description: "Тонкий, легкий, невероятный.", 
         specs: ["A19 Bionic", "6.3\""], 
         colors: ["#efeff5", "#6a95ec", "#67c595", "#141414", "#9287e8"],
-        storage: ["128 ГБ", "256 ГБ", "512 ГБ"],
+        storage: ["256 ГБ", "512 ГБ"],
         sim: ["eSIM", "SIM + eSIM"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/2f7/100500_800_140cd750bba9870f18aada2478b24840a/d3tf4gy4fvsh1uacmwk9cvfx576r6hfp.jpg",
         images: {
@@ -73,7 +73,7 @@ const products = [
             "#141414": "https://static.re-store.ru/upload/resize_cache/iblock/2f7/100500_800_140cd750bba9870f18aada2478b24840a/d3tf4gy4fvsh1uacmwk9cvfx576r6hfp.jpg",
             "#9287e8": "https://static.re-store.ru/upload/resize_cache/iblock/fbe/100500_800_140cd750bba9870f18aada2478b24840a/xiypmqi1pm3adi8nvzotf9sht7q8iige.jpg"
         },
-        storagePrices: { "128 ГБ": 799, "256 ГБ": 899, "512 ГБ": 1099 },
+        storagePrices: {"256 ГБ": 729, "512 ГБ": 869 },
         simPrices: { "eSIM": 0, "SIM + eSIM": 30 }
     },
 
@@ -81,7 +81,7 @@ const products = [
     { 
         id: "i16promax", 
         title: "Apple iPhone 16 Pro Max", 
-        price: 1099, 
+        price: 979, 
         description: "Apple Intelligence и титан.", 
         specs: ["A18 Pro", "6.9\""], 
         colors: ["#141414", "#efeff5", "#9ca2b0", "#d5af6c"],
@@ -94,13 +94,13 @@ const products = [
             "#9ca2b0": "https://static.re-store.ru/upload/resize_cache/iblock/a46/100500_800_140cd750bba9870f18aada2478b24840a/l3yvlidarp4nq24fg2qe86lv6wkakjsb.jpg",
             "#d5af6c": "https://static.re-store.ru/upload/resize_cache/iblock/0bc/100500_800_140cd750bba9870f18aada2478b24840a/0eybzk3ijxb0dr3ox8gxbss0e1s4jmae.jpg"
         },
-        storagePrices: { "256 ГБ": 1099, "512 ГБ": 1199, "1 ТБ": 1399 },
+        storagePrices: { "256 ГБ": 979, "512 ГБ": 1099, "1 ТБ": 1299 },
         simPrices: { "eSIM": 0, "SIM + eSIM": 40, "Dual SIM": 80 }
     },
     { 
         id: "i16pro", 
         title: "Apple iPhone 16 Pro", 
-        price: 999, 
+        price: 759, 
         description: "Мощь в компактном размере.", 
         specs: ["A18 Pro", "6.3\""], 
         colors: ["#141414", "#efeff5", "#9ca2b0", "#d5af6c"],
@@ -113,13 +113,13 @@ const products = [
             "#9ca2b0": "https://static.re-store.ru/upload/resize_cache/iblock/01f/100500_800_140cd750bba9870f18aada2478b24840a/bprnyy120p5zof1uybl4yws5uo2qma34.jpg",
             "#d5af6c": "https://static.re-store.ru/upload/resize_cache/iblock/1f5/100500_800_140cd750bba9870f18aada2478b24840a/ymntx2qy15nj7x154c10qntwsbghifhb.jpg"
         },
-        storagePrices: { "128 ГБ": 999, "256 ГБ": 1099, "512 ГБ": 1299, "1 ТБ": 1599 },
+        storagePrices: { "128 ГБ": 759, "256 ГБ": 899, "512 ГБ": 1069, "1 ТБ": 1199 },
         simPrices: { "eSIM": 0, "SIM + eSIM": 30, "Dual SIM": 70 }
     },
     { 
         id: "i16", 
         title: "Apple iPhone 16", 
-        price: 599, 
+        price: 589, 
         description: "Яркий и производительный.", 
         specs: ["A18 Chip", "6.1\""], 
         colors: ["#efeff5", "#6a95ec", "#67c595", "#141414", "#e40bf4"],
@@ -133,7 +133,7 @@ const products = [
             "#141414": "https://static.re-store.ru/upload/resize_cache/iblock/938/100500_800_140cd750bba9870f18aada2478b24840a/0nezbz8sc7xr6vzyjmw7tjzx9al17n95.jpg",
             "#e40bf4": "https://static.re-store.ru/upload/resize_cache/iblock/651/100500_800_140cd750bba9870f18aada2478b24840a/yx1cu4by682ipt0if9irxfkhascp5y5t.jpg"
         },
-        storagePrices: { "128 ГБ": 599, "256 ГБ": 699, "512 ГБ": 899 },
+        storagePrices: { "128 ГБ": 589, "256 ГБ": 659, "512 ГБ": 739 },
         simPrices: { "eSIM": 0, "SIM + eSIM": 30 }
     },
 
@@ -141,7 +141,7 @@ const products = [
     { 
         id: "i15promax", 
         title: "Apple iPhone 15 Pro Max", 
-        price: 899, 
+        price: 1099, 
         description: "Первый титановый iPhone с 5х зумом.", 
         specs: ["A17 Pro", "6.7\""], 
         colors: ["#efeff5"],
@@ -151,7 +151,7 @@ const products = [
         images: {
             "#efeff5": "https://static.re-store.ru/upload/resize_cache/iblock/cf6/100500_800_140cd750bba9870f18aada2478b24840a/wvs0w8asdqamtg3mhr6jxl1de8186fs7.jpg",
         },
-        storagePrices: { "256 ГБ": 799, "512 ГБ": 899, "1 ТБ": 999 },
+        storagePrices: { "256 ГБ": 1099, "512 ГБ": 1199, "1 ТБ": 1399 },
         simPrices: { "eSIM": 0, "SIM + eSIM": 20, "Dual SIM": 60 }
     },
 
@@ -159,7 +159,7 @@ const products = [
     { 
         id: "ipadpro", 
         title: "Apple iPad Pro 13 (M5, 2025) WiFi + Cellular", 
-        price: 1399, 
+        price: 1099, 
         description: "Тонкий. Мощный. OLED-дисплей нового поколения.", 
         specs: ["M5 Chip", "Ultra Retina OLED", "WiFi"], 
         colors: ["#9ca2b0", "#efeff5"],
@@ -169,12 +169,12 @@ const products = [
             "#9ca2b0": "https://static.re-store.ru/upload/resize_cache/iblock/c31/100500_800_140cd750bba9870f18aada2478b24840a/3a89519konnv8x0gnp2cry8q8mnd6a88.jpg",
             "#efeff5": "https://static.re-store.ru/upload/resize_cache/iblock/8d3/100500_800_140cd750bba9870f18aada2478b24840a/aiebiutl1oj68lvse8a0ia8txxaah05i.jpg"
         },
-        storagePrices: { "256 ГБ": 1399, "512 ГБ": 1499, "1 ТБ": 1699, "2 ТБ": 1999 }
+        storagePrices: { "256 ГБ": 1099, "512 ГБ": 1299, "1 ТБ": 1499, "2 ТБ": 1699 }
     },
     { 
         id: "ipadair", 
         title: "Apple iPad Air (2025) M3 13", 
-        price: 799, 
+        price: 649, 
         description: "Больше экрана. Больше возможностей.", 
         specs: ["M3 Chip", "Liquid Retina", "WiFi + Cellular"], 
         colors: ["#5cabff", "#5a636d", "#b450e2", "#e2ddbb"],
@@ -186,12 +186,12 @@ const products = [
             "#b450e2": "https://static.re-store.ru/upload/resize_cache/iblock/07f/100500_800_140cd750bba9870f18aada2478b24840a/1k15b0ud4vihafcx1o6ifiz8qfi7sxy5.jpg",
             "#e2ddbb": "https://static.re-store.ru/upload/resize_cache/iblock/86d/100500_800_140cd750bba9870f18aada2478b24840a/b58buipwqpsokmodxkk754uujbp7esnv.jpg"
         },
-        storagePrices: { "128 ГБ": 799, "256 ГБ": 899, "512 ГБ": 1099, "1 ТБ": 1299 }
+        storagePrices: { "128 ГБ": 649, "256 ГБ": 749, "512 ГБ": 899, "1 ТБ": 1199 }
     },
     { 
         id: "ipadmini", 
         title: "Apple iPad mini (2024)", 
-        price: 499, 
+        price: 399, 
         description: "Огромная мощь в миниатюрном корпусе.", 
         specs: ["A17 Pro", "8.3\"", "WiFi + Cellular"], 
         colors: ["#5cabff", "#5a636d", "#e2ddbb"],
@@ -202,16 +202,16 @@ const products = [
             "#5a636d": "https://static.re-store.ru/upload/resize_cache/iblock/077/100500_800_140cd750bba9870f18aada2478b24840a/qm5ed6nwk1mlcxmdm9i3xeq5gq56dyyl.jpg",
             "#e2ddbb": "https://static.re-store.ru/upload/resize_cache/iblock/65a/100500_800_140cd750bba9870f18aada2478b24840a/jw70c62k7itfk5jvhsr62sb7ddzuoqit.jpg"
         },
-        storagePrices: { "128 ГБ": 499, "256 ГБ": 599, "512 ГБ": 799 }
+        storagePrices: { "128 ГБ": 399, "256 ГБ": 499, "512 ГБ": 749 }
     },
 
     // --- MacBOOKS ---
     { 
         id: "mbp14", 
         title: "Apple MacBook Pro 14\"", 
-        price: 1599, 
-        description: "Профессиональный инструмент на чипе M5.", 
-        specs: ["M5 Chip", "10-core CPU", "16GB Unified RAM"], 
+        price: 2099, 
+        description: "Профессиональный инструмент на чипе M4.", 
+        specs: ["M4 Chip", "10-core CPU"], 
         colors: ["#141414", "#9ca2b0"],
         storage: ["SSD 512Gb ОЗУ 16Gb", "SSD 1ТБ ОЗУ 24Gb", "SSD 2ТБ ОЗУ 48Gb"],
         image: "https://static.re-store.ru/upload/resize_cache/iblock/712/100500_800_140cd750bba9870f18aada2478b24840a/2d24borrhwi0dmwizcuilv1515g5asst.jpg",
@@ -219,12 +219,12 @@ const products = [
             "#141414": "https://static.re-store.ru/upload/resize_cache/iblock/712/100500_800_140cd750bba9870f18aada2478b24840a/2d24borrhwi0dmwizcuilv1515g5asst.jpg",
             "#9ca2b0": "https://static.re-store.ru/upload/resize_cache/iblock/f90/100500_800_140cd750bba9870f18aada2478b24840a/vli1ibd549jxssugnie36iwfwfdd1h91.jpg"
         },
-        storagePrices: { "SSD 512Gb ОЗУ 16Gb": 2399, "SSD 1ТБ ОЗУ 24Gb": 2599, "SSD 2ТБ ОЗУ 48Gb": 3299 }
+        storagePrices: { "SSD 512Gb ОЗУ 16Gb": 2099, "SSD 1ТБ ОЗУ 24Gb": 2599, "SSD 2ТБ ОЗУ 48Gb": 4999 }
     },
     { 
         id: "mbp16", 
         title: "Apple MacBook Pro 16\"", 
-        price: 2499, 
+        price: 3999, 
         description: "Максимум экрана и производительности.", 
         specs: ["M4 Max", "Liquid Retina XDR", "96W Charge"], 
         colors: ["#141414", "#9ca2b0"],
@@ -234,12 +234,12 @@ const products = [
             "#141414": "https://static.re-store.ru/upload/iblock/93a/cedafw22o08vgt62u0wy4xtrkaubxh0j.png",
             "#9ca2b0": "https://static.re-store.ru/upload/iblock/28f/zwz3kl0dslap8ttqbxinh7uzt4il7a6d.png"
         },
-        storagePrices: { "SSD 1ТБ ОЗУ 36Gb": 2499, "SSD 2ТБ ОЗУ 64Gb": 2899, "SSD 8ТБ ОЗУ 128Gb": 3699 }
+        storagePrices: { "SSD 1ТБ ОЗУ 36Gb": 3999, "SSD 2ТБ ОЗУ 64Gb": 7999, "SSD 8ТБ ОЗУ 128Gb": 15999 }
     },
     { 
         id: "mbair", 
         title: "Apple MacBook Air 13 (M4)", 
-        price: 1099, 
+        price: 1499, 
         description: "Тонкий, легкий, бесшумный.", 
         specs: ["M4 Chip", "18 часов работы", "Liquid Retina"], 
         colors: ["#9ca2b0", "#141414", "#e2ddbb"],
@@ -250,7 +250,7 @@ const products = [
             "#141414": "https://static.re-store.ru/upload/resize_cache/iblock/130/100500_800_140cd750bba9870f18aada2478b24840a/qyc9xmj0wiafd5itij7qw8k11vqf1e92.jpg",
             "#e2ddbb": "https://static.re-store.ru/upload/resize_cache/iblock/bbe/100500_800_140cd750bba9870f18aada2478b24840a/3finphiume3tp0dwibjhte78fi1tyeie.jpg"
         },
-        storagePrices: { "SSD 256Gb ОЗУ 16Gb": 1399, "SSD 512Gb ОЗУ 24Gb": 2099, "SSD 1ТБ ОЗУ 32Gb": 3199 }
+        storagePrices: { "SSD 256Gb ОЗУ 16Gb": 1499, "SSD 512Gb ОЗУ 24Gb": 1799, "SSD 1ТБ ОЗУ 32Gb": 3599 }
     }
 ];
 
